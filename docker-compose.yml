@@ -1,0 +1,50 @@
+services:
+  # ComPDF PDF Generation engine. Publishing this port also supports local API development.
+  compdf-app:
+    image: compdfkit/compdf-app:1.0.0
+    platform: ${COMPDF_IMAGE_PLATFORM:-linux/amd64}
+    env_file:
+      - .env
+    environment:
+      COMPDFKIT_LICENSE: ${COMPDF_LICENSE_KEY:?COMPDF_LICENSE_KEY must be set in .env}
+    ports:
+      - "7001:7001"
+    mem_limit: 16g
+    restart: unless-stopped
+    networks:
+      - compdf-internal
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket,sys; s=socket.socket(); s.settimeout(3); sys.exit(0 if s.connect_ex(('127.0.0.1',7001))==0 else 1)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  # Public Web UI and Express API; built from the multi-stage Dockerfile.
+  compdf-generation:
+    image: compdf-generation-web:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_IMAGE: ${NODE_IMAGE:-node:22-bookworm-slim}
+    depends_on:
+      compdf-app:
+        condition: service_healthy
+    environment:
+      COMPDF_PDF_BASE_URL: http://compdf-app:7001
+      COMPDF_TIMEOUT_MS: ${COMPDF_TIMEOUT_MS:-120000}
+      TEMPLATE_STORAGE_DIR: /data/templates
+    volumes:
+      # Template source files and metadata must survive image/container updates.
+      - "${TEMPLATE_STORAGE_DIR:-./data/templates}:/data/templates"
+    ports:
+      - "${APP_PORT:-8090}:8090"
+    restart: unless-stopped
+    networks:
+      - compdf-internal
+
+networks:
+  # Both services share this private bridge network; only compdf-generation publishes a port.
+  compdf-internal:
+    driver: bridge

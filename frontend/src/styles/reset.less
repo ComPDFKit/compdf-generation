@@ -1,0 +1,112 @@
+// 对部分样式进行重置
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  min-width: 1280px;
+}
+:root {
+  &:lang(zh-cn) {
+    --td-font-family: 'Noto Sans SC', sans-serif;
+    --td-font-family-medium: 'Noto Sans SC', sans-serif;
+  }
+  &:lang(zh-tw) {
+    --td-font-family: 'Noto Sans TC', sans-serif;
+    --td-font-family-medium: 'Noto Sans TC', sans-serif;
+  }
+  &:lang(ja) {
+    --td-font-family: 'Noto Sans JP', sans-serif;
+    --td-font-family-medium: 'Noto Sans JP', sans-serif;
+  }
+  &:lang(en) {
+    --td-font-family: 'Encode Sans Expanded', sans-serif;
+    --td-font-family-medium: Encode Sans, sans-serif;
+  }
+}
+
+body {
+  color: var(--td-text-color-secondary);
+  font: var(--td-font-body-medium);
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+figure,
+h1,
+h2,
+h3,
+h4,
+h6,
+ul,
+p,
+input {
+  margin: 0;
+  padding: 0;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  vertical-align: middle;
+}
+
+button {
+  display: inline-block;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  font-size: 14px;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #fff;
+}
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: none;
+}
+
+pre {
+  font-family: var(--td-font-family);
+}
+
+ul,
+dl,
+li,
+dd,
+dt {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+.w-e-full-screen-container {
+    z-index: 10;
+  }
