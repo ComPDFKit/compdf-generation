@@ -66,45 +66,31 @@ const saveOptions = computed<DropdownProps['options']>(() => [
   { content: t('template.editor.saveAsNew'), value: 'save-as-new' },
 ])
 
-const generationErrorMessageKeys: Record<string, string> = {
-  BAD_REQUEST: 'template.generationError.invalidRequest',
-  VALIDATION_ERROR: 'template.generationError.invalidRequest',
-  INVALID_REQUEST: 'template.generationError.invalidRequest',
-  INVALID_ARGUMENT: 'template.generationError.invalidRequest',
-  INVALID_JSON: 'template.generationError.invalidJson',
-  INVALID_FILE_TYPE: 'template.generationError.invalidFileType',
-  FILE_REQUIRED: 'template.generationError.fileRequired',
-  FILE_COUNT_MISMATCH: 'template.generationError.fileCountMismatch',
-  FILE_TOO_LARGE: 'template.generationError.fileTooLarge',
-  PAGE_LIMIT_EXCEEDED: 'template.generationError.pageLimitExceeded',
-  INVALID_PAGE_RANGE: 'template.generationError.invalidRequest',
-  INVALID_PAGE_INDEX: 'template.generationError.invalidRequest',
-  INVALID_RECT: 'template.generationError.invalidRequest',
-  INVALID_QUAD_RECTS: 'template.generationError.invalidRequest',
-  PAGE_RANGE_EMPTY: 'template.generationError.invalidRequest',
-  INVALID_OUTPUT_FILE_NAME: 'template.generationError.invalidOutputFileName',
-  UNAUTHORIZED: 'template.generationError.unauthorized',
-  FORBIDDEN: 'template.generationError.forbidden',
-  INVALID_TOKEN: 'template.generationError.forbidden',
-  NOT_FOUND: 'template.generationError.notFound',
-  TASK_NOT_READY: 'template.generationError.invalidState',
-  INVALID_STATE: 'template.generationError.invalidState',
-  CONCURRENCY_EXCEEDED: 'template.generationError.concurrencyExceeded',
-  CONCURRENCY_LIMIT: 'template.generationError.concurrencyExceeded',
-  INTERNAL_ERROR: 'template.generationError.internalError',
-  CONVERT_FAILED: 'template.generationError.processingFailed',
-  SDK_PROCESS_FAILED: 'template.generationError.processingFailed',
-  PASSWORD_REQUIRED: 'template.generationError.processingFailed',
-  INVALID_PASSWORD: 'template.generationError.processingFailed',
-  ICC_PROFILE_REQUIRED: 'template.generationError.processingFailed',
-  ICC_PROFILE_INVALID: 'template.generationError.processingFailed',
-  PDF_PASSWORD_ERROR: 'template.generationError.processingFailed',
-  PDF_FORMAT_ERROR: 'template.generationError.processingFailed',
-  PDF_SECURITY_ERROR: 'template.generationError.processingFailed',
-  OCR_FAILURE: 'template.generationError.processingFailed',
-  SDK_FILE_ERROR: 'template.generationError.processingFailed',
-  JOB_TIMEOUT: 'template.generationError.timeout',
-  UPSTREAM_ERROR: 'template.generationError.upstreamError',
+const generationServiceErrorMessageKeys: Record<number, string> = {
+  100001: 'template.generationError.invalidRequest',
+  100002: 'template.generationError.jsonParse',
+  100102: 'template.generationError.fileRequired',
+  100104: 'template.generationError.fileTooLarge',
+  100106: 'template.generationError.invalidOutputFileName',
+  190002: 'template.generationError.pdfSave',
+  190003: 'template.generationError.fileRead',
+  190999: 'template.generationError.unknown',
+}
+
+const generationSdkErrorMessageKeys: Record<string, string> = {
+  HTML_CONVERTER_ERROR_FILE_READ: 'template.generationError.fileRead',
+  HTML_CONVERTER_ERROR_PDF_SAVE: 'template.generationError.pdfSave',
+  HTML_CONVERTER_ERROR_RENDER: 'template.generationError.htmlRender',
+  HTML_CONVERTER_ERROR_HTML_PARSE: 'template.generationError.htmlParse',
+  HTML_CONVERTER_ERROR_JSON_PARSE: 'template.generationError.jsonParse',
+  HTML_CONVERTER_ERROR_TEMPLATE_PARSE: 'template.generationError.templateParse',
+  HTML_CONVERTER_ERROR_TEMPLATE_RENDER: 'template.generationError.templateRender',
+  HTML_CONVERTER_ERROR_INVALID_PARAM: 'template.generationError.invalidRequest',
+  HTML_CONVERTER_ERROR_LICENSE_NOT_INIT: 'template.generationError.licenseNotInitialized',
+  HTML_CONVERTER_ERROR_LICENSE_INVALID: 'template.generationError.licenseInvalid',
+  HTML_CONVERTER_ERROR_LICENSE_EXPIRED: 'template.generationError.licenseExpired',
+  HTML_CONVERTER_ERROR_LICENSE_NO_PERMISSION: 'template.generationError.licenseNoPermission',
+  HTML_CONVERTER_ERROR_UNKNOWN: 'template.generationError.unknown',
 }
 
 onMounted(() => {
@@ -277,10 +263,14 @@ async function downloadTemplate() {
 /** Maps documented ComPDF error codes to localized messages. */
 function resolveGenerationErrorMessage(error: unknown): string {
   if (error instanceof GeneratePdfError) {
-    const key = error.errorCode ? generationErrorMessageKeys[error.errorCode] : undefined
-    return key ? t(key) : error.message || t('template.generationError.generic')
+    const sdkKey = Object.entries(generationSdkErrorMessageKeys)
+      .find(([code]) => error.message.includes(code))?.[1]
+    if (sdkKey) return t(sdkKey)
+    const serviceCode = error.bizCode ?? Number(error.code)
+    const serviceKey = generationServiceErrorMessageKeys[serviceCode]
+    return serviceKey ? t(serviceKey) : t('template.generationError.unknown')
   }
-  return t('template.generationError.generic')
+  return t('template.generationError.unknown')
 }
 
 /** Generates and downloads a PDF using the HTML and optional JSON data source. */

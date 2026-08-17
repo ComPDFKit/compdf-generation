@@ -31,6 +31,8 @@ export class GeneratePdfError extends Error {
   constructor(
     message: string,
     readonly errorCode?: string,
+    readonly bizCode?: number,
+    readonly code?: string,
   ) {
     super(message)
   }
@@ -48,6 +50,8 @@ async function resolveGenerationError(error: unknown, fallback: string): Promise
   return new GeneratePdfError(
     body?.msg || error.message || `${fallback}${status ? ` (${status})` : ''}`,
     body?.errorCode,
+    body?.bizCode,
+    body?.code,
   )
 }
 
@@ -65,9 +69,9 @@ function readError(data: unknown): ComPdfErrorResponse | undefined {
       return undefined
     }
   }
-  if (data && typeof data === 'object' && 'msg' in data && 'errorCode' in data) {
+  if (data && typeof data === 'object' && 'msg' in data && 'code' in data) {
     const error = data as Partial<ComPdfErrorResponse>
-    if (typeof error.msg === 'string' && typeof error.errorCode === 'string') {
+    if (typeof error.msg === 'string' && typeof error.code === 'string') {
       return error as ComPdfErrorResponse
     }
   }

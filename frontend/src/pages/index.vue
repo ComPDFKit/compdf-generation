@@ -77,7 +77,6 @@ function openCreateDialog() {
 function openImportDialog() {
   importDialogVisible.value = true
 }
-
 /** Imports the selected template files and refreshes the template list. */
 async function handleImportTemplates(files: File[]) {
   importing.value = true
@@ -88,9 +87,9 @@ async function handleImportTemplates(files: File[]) {
     if(failedCount == 0){
       MessagePlugin.success(t('template.import.success'))
     }else if (successCount == 0) {
-      MessagePlugin.warning(t('template.import.noUsable'))
+      MessagePlugin.error(t('template.import.noUsable'))
     } else {
-      MessagePlugin.info(t('template.import.summary', {
+      MessagePlugin.warning(t('template.import.summary', {
         totalCount: successCount + failedCount,
         successCount,
         failedCount,

@@ -14,7 +14,7 @@ export interface ComPdfErrorResponse {
   code: string
   msg: string
   data: null
-  errorCode: string
+  errorCode?: string
   bizCode?: number
   traceId?: string
   details?: unknown

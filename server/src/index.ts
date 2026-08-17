@@ -199,6 +199,19 @@ function readErrorMessage(body: Record<string, unknown> | undefined): string | u
 /** Resolves the semantic error code defined by the ComPDF API. */
 function readErrorCode(body: Record<string, unknown> | undefined, status: number): string {
   if (typeof body?.errorCode === 'string' && body.errorCode) return body.errorCode
+  const serviceCode = typeof body?.code === 'number' ? body.code : Number(body?.code)
+  const serviceErrorCode = ({
+    190001: 'SDK_PROCESS_FAILED',
+    190002: 'TEMP_FILE_WRITE_FAILED',
+    190003: 'TEMP_FILE_READ_FAILED',
+    100001: 'INVALID_ARGUMENT',
+    100002: 'INVALID_JSON',
+    100102: 'FILE_REQUIRED',
+    100104: 'FILE_TOO_LARGE',
+    100106: 'INVALID_OUTPUT_FILE_NAME',
+    190999: 'INTERNAL_ERROR',
+  } as Record<number, string>)[serviceCode]
+  if (serviceErrorCode) return serviceErrorCode
   return ({
     400: 'INVALID_REQUEST',
     401: 'UNAUTHORIZED',
