@@ -56,7 +56,7 @@
 ### 开始前准备
 
 - Windows 或 macOS 上的 Docker Desktop，或 Linux 上的 Docker Engine 和 Docker Compose plugin。
-- 可从 Docker Hub 拉取 `compdfkit/compdf-app:1.0.0` 镜像。
+- 可从 Docker Hub 拉取 `compdfkit/pdf-generation:1.0.0` 镜像。
 
 ### 获取项目
 

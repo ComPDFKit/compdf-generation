@@ -56,7 +56,7 @@
 ### Prerequisites
 
 - Docker Desktop on Windows or macOS, or Docker Engine with the Docker Compose plugin on Linux
-- Access to pull the `compdfkit/compdf-app:1.0.0` image from Docker Hub
+- Access to pull the `compdfkit/pdf-generation:1.0.0` image from Docker Hub
 
 ### Get the Project
 

@@ -61,7 +61,7 @@ License GitHub Stars PRs Welcome
 
 - Windows、macOS：請安裝 Docker Desktop  
 - Linux：請安裝 Docker Engine 與 Docker Compose 外掛程式  
-- 可從 Docker Hub 拉取 `compdfkit/compdf-app:1.0.0` 映像檔
+- 可從 Docker Hub 拉取 `compdfkit/pdf-generation:1.0.0` 映像檔
 
 ### **授權金鑰**
 

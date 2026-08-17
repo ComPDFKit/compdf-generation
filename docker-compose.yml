@@ -1,7 +1,7 @@
 services:
   # ComPDF PDF Generation engine. Publishing this port also supports local API development.
   compdf-app:
-    image: compdfkit/compdf-app:1.0.0
+    image: compdfkit/pdf-generation:1.0.0
     platform: ${COMPDF_IMAGE_PLATFORM:-linux/amd64}
     env_file:
       - .env
@@ -14,7 +14,7 @@ services:
     networks:
       - compdf-internal
     healthcheck:
-      test: ["CMD", "python", "-c", "import socket,sys; s=socket.socket(); s.settimeout(3); sys.exit(0 if s.connect_ex(('127.0.0.1',7001))==0 else 1)"]
+      test: ["CMD", "curl", "-fsS", "http://localhost:7001/livez"]
       interval: 10s
       timeout: 5s
       retries: 12

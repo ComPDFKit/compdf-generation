@@ -3,3 +3,8 @@ dist/
 .env
 data/
 *.log
+
+# Development files
+AGENTS.md
+ComPDF Generation.md
+server/API.md

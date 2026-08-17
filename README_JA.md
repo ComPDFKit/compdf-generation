@@ -56,7 +56,7 @@
 ### 事前準備
 
 - Windows または macOS の場合は Docker Desktop、Linux の場合は Docker Engine と Docker Compose plugin を用意してください
-- Docker Hub から `compdfkit/compdf-app:1.0.0` イメージを取得できること
+- Docker Hub から `compdfkit/pdf-generation:1.0.0` イメージを取得できること
 
 ### プロジェクトの取得
 
