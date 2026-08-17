@@ -35,7 +35,9 @@ import type { JsonFieldInfo, JsonFieldType } from '@/utils/json-data-source'
 type InputMode = 'file' | 'text'
 type TextFunction = 'none' | 'concat' | 'upper' | 'lower'
 type NumberFormat = 'currency' | 'percentage' | 'plain'
-type CurrencySymbol = '¥' | '$' | '£'
+type CurrencySymbol = 'usd' | 'dollar' | 'euro' | 'yen' | 'pound' | 'cny' | 'yenPlain' | 'yuan' | 'chf'
+  | 'aud' | 'cad' | 'hkd' | 'sgd' | 'inr' | 'krw' | 'twd' | 'brl' | 'zar' | 'idr' | 'try'
+  | 'thb' | 'myr' | 'aed' | 'sar' | 'rub' | 'vnd'
 type SymbolPosition = 'before' | 'after'
 type RoundingMode = '' | 'round' | 'ceil' | 'floor'
 type NumberFunction = 'none' | 'add' | 'subtract' | 'multiply' | 'divide' | 'power'
@@ -58,7 +60,10 @@ interface TablePlaceholderColumn {
 }
 
 const numberFormatValues: NumberFormat[] = ['currency', 'percentage', 'plain']
-const currencySymbolValues: CurrencySymbol[] = ['¥', '$', '£']
+const currencySymbolValues: CurrencySymbol[] = [
+  'usd', 'dollar', 'euro', 'yen', 'pound', 'cny', 'yenPlain', 'yuan', 'chf', 'aud', 'cad', 'hkd', 'sgd',
+  'inr', 'krw', 'twd', 'brl', 'zar', 'idr', 'try', 'thb', 'myr', 'aed', 'sar', 'rub', 'vnd',
+]
 const symbolPositionValues: SymbolPosition[] = ['before', 'after']
 
 const props = withDefaults(defineProps<{
@@ -135,6 +140,10 @@ const fieldTypeOptions = computed(() => [
   { label: t('template.editor.jsonType.table'), value: 'table' },
 ])
 const tableColumnTypeOptions = computed(() => fieldTypeOptions.value.filter(option => option.value !== 'table'))
+const currencySymbolOptions = computed(() => currencySymbolValues.map(value => ({
+  label: t(`template.editor.currencySymbolOption.${value}`),
+  value,
+})))
 const tableFillDemoColumns = computed(() => [
   t('template.editor.tableFillDemoProductName'),
   t('template.editor.tableFillDemoUnitPrice'),
@@ -490,7 +499,7 @@ function numberPlaceholder(path: string, configPath = path, defaultFormat: Numbe
     : path
   if (format === 'percentage') return `{{${expression}}}%`
   if (format === 'plain') return `{{${expression}}}`
-  const symbol = currencySymbols.value[configPath] || '$'
+  const symbol = t(`template.editor.currencySymbolOption.${currencySymbols.value[configPath] || 'dollar'}`)
   const placeholder = `{{${expression}}}`
   return symbolPositions.value[configPath] === 'after'
     ? `${placeholder}${symbol}`
@@ -552,7 +561,7 @@ function ensureFieldConfig(path: string) {
   textFunctions.value[path] ??= 'none'
   stitchTexts.value[path] ??= ''
   numberFormats.value[path] ??= 'plain'
-  currencySymbols.value[path] ??= '$'
+  currencySymbols.value[path] ??= 'dollar'
   symbolPositions.value[path] ??= 'before'
   decimalPlaces.value[path] ??= '2'
   thousandSeparators.value[path] ??= false
@@ -1632,17 +1641,11 @@ function formatValidationMessage(result: DataSourceValidationResult): string {
               <div v-if="numberFormats[field.path] === 'currency'" class="json-field-card__configuration-grid">
                 <label>
                   <span>{{ t('template.editor.currencySymbol') }}</span>
-                  <span class="placeholder-segmented">
-                    <button
-                      v-for="symbol in currencySymbolValues"
-                      :key="symbol"
-                      type="button"
-                      :class="{ 'is-active': currencySymbols[field.path] === symbol }"
-                      @click="currencySymbols[field.path] = symbol"
-                    >
-                      {{ symbol }}
-                    </button>
-                  </span>
+                  <t-select
+                    v-model="currencySymbols[field.path]"
+                    size="small"
+                    :options="currencySymbolOptions"
+                  />
                 </label>
                 <label>
                   <span>{{ t('template.editor.symbolPosition') }}</span>
@@ -1830,17 +1833,11 @@ function formatValidationMessage(result: DataSourceValidationResult): string {
                       <div v-if="numberFormats[column.path] === 'currency'" class="json-field-card__configuration-grid">
                         <label>
                           <span>{{ t('template.editor.currencySymbol') }}</span>
-                          <span class="placeholder-segmented">
-                            <button
-                              v-for="symbol in currencySymbolValues"
-                              :key="symbol"
-                              type="button"
-                              :class="{ 'is-active': currencySymbols[column.path] === symbol }"
-                              @click="currencySymbols[column.path] = symbol"
-                            >
-                              {{ symbol }}
-                            </button>
-                          </span>
+                          <t-select
+                            v-model="currencySymbols[column.path]"
+                            size="small"
+                            :options="currencySymbolOptions"
+                          />
                         </label>
                         <label>
                           <span>{{ t('template.editor.symbolPosition') }}</span>
