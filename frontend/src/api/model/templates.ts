@@ -16,6 +16,16 @@ export interface TemplateSearchResult {
   total: number
 }
 
+export interface TemplateImportFailure {
+  name: string
+  message: string
+}
+
+export interface TemplateImportResult {
+  imported: TemplateRecord[]
+  failed: TemplateImportFailure[]
+}
+
 export interface TemplateNameExistsResult {
   exists: boolean
 }

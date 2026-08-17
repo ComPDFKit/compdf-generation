@@ -2052,7 +2052,6 @@ function formatValidationMessage(result: DataSourceValidationResult): string {
             :class="{ 'is-dragging': dragging }"
             role="button"
             tabindex="0"
-            @click="fileInput?.click()"
             @keydown.enter.prevent="fileInput?.click()"
             @keydown.space.prevent="fileInput?.click()"
             @dragenter.prevent="dragging = true"
@@ -2061,7 +2060,7 @@ function formatValidationMessage(result: DataSourceValidationResult): string {
             @drop.prevent="handleDrop"
           >
             <div class="json-import-dialog__dropzone-content">
-              <t-button variant="outline" theme="primary" tabindex="-1">
+              <t-button variant="outline" theme="primary" tabindex="-1" @click="fileInput?.click()">
                 <template #icon><UploadIcon /></template>
                 {{ t('template.editor.selectFiles') }}
               </t-button>

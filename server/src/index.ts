@@ -34,7 +34,7 @@ app.use('/api', (_request, response, next) => {
   }
   next()
 })
-app.use('/api/templates', createTemplateRouter(templateStorageDir))
+app.use('/api/templates', createTemplateRouter(templateStorageDir, { pdfBaseUrl, timeoutMs }))
 
 app.post('/api/v1/process/pdf/generation/template-to-pdf', upload.fields([
   { name: 'templateFile', maxCount: 1 },

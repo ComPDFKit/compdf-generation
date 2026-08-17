@@ -191,7 +191,7 @@ function uploadLocalImage(
 /** WangEditor stores image dimensions in the style field internally. */
 function toEditorHtml(value: string): string {
   const htmlWithoutLoopMarkers = extractTableLoopMarkers(value)
-  return htmlWithoutLoopMarkers.replace(/<img\b[^>]*>/gi, (tag) => {
+  return wrapOrphanImages(htmlWithoutLoopMarkers).replace(/<img\b[^>]*>/gi, (tag) => {
     if (!tag.includes('{{')) return tag
     const width = getAttribute(tag, 'width')
     const height = getAttribute(tag, 'height')
@@ -206,6 +206,22 @@ function toEditorHtml(value: string): string {
     result = setAttribute(result, 'style', mergedStyle)
     return result
   })
+}
+
+/** Wraps images outside a WangEditor block so Slate can resolve their DOM nodes. */
+function wrapOrphanImages(value: string): string {
+  if (typeof document === 'undefined') return value
+  const template = document.createElement('template')
+  template.innerHTML = value
+  template.content.querySelectorAll('img').forEach((image) => {
+    const parent = image.parentElement
+    if (!parent || !parent.closest('p, h1, h2, h3, h4, h5, td, th, blockquote, li, pre')) {
+      const paragraph = document.createElement('p')
+      image.replaceWith(paragraph)
+      paragraph.appendChild(image)
+    }
+  })
+  return template.innerHTML
 }
 
 /** Preserves loop metadata from existing template HTML before WangEditor removes comments. */
@@ -296,7 +312,26 @@ function toTemplateHtml(value: string): string {
     if (height) result = setAttribute(result, 'height', htmlSize(height))
     return result
   })
-  return restoreTemplateComparisonOperators(addTableLoopMarkers(addTableBorders(normalized)))
+  return unwrapSingleImageParagraphs(
+    restoreTemplateComparisonOperators(addTableLoopMarkers(addTableBorders(normalized))),
+  )
+}
+
+/** Reverts editor-only image paragraphs so saved HTML keeps the source structure. */
+function unwrapSingleImageParagraphs(value: string): string {
+  if (typeof document === 'undefined') return value
+  const template = document.createElement('template')
+  template.innerHTML = value
+  template.content.querySelectorAll('p').forEach((paragraph) => {
+    const visibleChildren = Array.from(paragraph.childNodes).filter((node) => {
+      if (node.nodeType === Node.TEXT_NODE) return Boolean(node.textContent?.trim())
+      return node.nodeType === Node.ELEMENT_NODE
+    })
+    if (visibleChildren.length === 1 && visibleChildren[0] instanceof HTMLImageElement) {
+      paragraph.replaceWith(visibleChildren[0])
+    }
+  })
+  return template.innerHTML
 }
 
 /** Restores comparison operators escaped by HTML serialization inside template expressions. */

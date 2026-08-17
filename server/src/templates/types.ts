@@ -33,6 +33,23 @@ export interface CreateTemplateInput {
   jsonFile?: Express.Multer.File
 }
 
+export interface TemplateImportEntry {
+  name: string
+  description?: string
+  htmlFile: Express.Multer.File
+  jsonFile?: Express.Multer.File
+}
+
+export interface TemplateImportFailure {
+  name: string
+  message: string
+}
+
+export interface TemplateImportResult {
+  imported: TemplateMetadata[]
+  failed: TemplateImportFailure[]
+}
+
 export interface UpdateTemplateInput {
   name?: string
   description?: string

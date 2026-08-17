@@ -4,6 +4,7 @@ import type {
   CreateTemplateParams,
   TemplateDownloadResult,
   TemplateContent,
+  TemplateImportResult,
   TemplateNameExistsResult,
   TemplateRecord,
   TemplateSearchResult,
@@ -52,6 +53,19 @@ export async function apiCreateTemplateApi(params: CreateTemplateParams): Promis
     return response.data
   } catch (error) {
     throw new Error(resolveApiErrorMessage(error, 'Unable to create template'))
+  }
+}
+
+/** Imports HTML, DITO, and ZIP template packages in a batch. */
+export async function apiImportTemplatesApi(files: File[]): Promise<TemplateImportResult> {
+  const form = new FormData()
+  files.forEach(file => form.append('files', file))
+
+  try {
+    const response = await request.post<TemplateImportResult>('/templates/import', form)
+    return response.data
+  } catch (error) {
+    throw new Error(resolveApiErrorMessage(error, 'Unable to import templates'))
   }
 }
 

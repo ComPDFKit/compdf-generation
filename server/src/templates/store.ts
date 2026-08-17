@@ -110,6 +110,13 @@ export class TemplateStore {
     }
   }
 
+  /** Creates one imported template, appending a numeric suffix when the name is taken. */
+  async createImported(input: CreateTemplateInput): Promise<TemplateMetadata> {
+    const { items } = await this.search()
+    const usedNames = new Set(items.map(item => normalizeName(item.name)))
+    return this.create({ ...input, name: nextAvailableName(input.name, usedNames) })
+  }
+
   /** Updates metadata and atomically replaces optional template files. */
   async update(id: string, input: UpdateTemplateInput): Promise<TemplateMetadata> {
     const current = await this.readMetadata(id)
@@ -223,6 +230,16 @@ function validateName(value: string): void {
 /** Normalizes a template name for case-insensitive duplicate checks. */
 function normalizeName(value: string): string {
   return value.trim().toLowerCase()
+}
+
+/** Returns the first available name by appending (n) when needed. */
+function nextAvailableName(baseName: string, usedNames: Set<string>): string {
+  const base = baseName.trim()
+  if (!base) throw new TemplateStoreError('Template name is required', 400)
+  if (!usedNames.has(normalizeName(base))) return base
+  let index = 1
+  while (usedNames.has(normalizeName(`${base} (${index})`))) index += 1
+  return `${base} (${index})`
 }
 
 /** Validates that the uploaded file is a non-empty HTML document. */

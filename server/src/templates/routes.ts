@@ -4,12 +4,19 @@ import { ZipArchive } from 'archiver'
 import { Router, type NextFunction, type Request, type Response } from 'express'
 import multer from 'multer'
 
+import { parseImportFile, type TemplateEngineOptions } from './import.js'
 import { TemplateStore, TemplateStoreError } from './store.js'
+import type { TemplateImportFailure, TemplateImportResult, TemplateMetadata } from './types.js'
 import { normalizeMultipartFileName } from '../upload.js'
 
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { files: 2, fields: 4 },
+})
+
+const importUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: { files: 200, fields: 4 },
 })
 
 const uploadTemplateFiles = upload.fields([
@@ -18,7 +25,7 @@ const uploadTemplateFiles = upload.fields([
 ])
 
 /** Creates the template search, create, update, delete, and download routes. */
-export function createTemplateRouter(storageDirectory: string): Router {
+export function createTemplateRouter(storageDirectory: string, engine: TemplateEngineOptions): Router {
   const router = Router()
   const store = new TemplateStore(storageDirectory)
 
@@ -48,6 +55,35 @@ export function createTemplateRouter(storageDirectory: string): Router {
       jsonFile,
     })
     response.status(201).json(template)
+  }))
+
+  router.post('/import', importUpload.array('files', 200), asyncRoute(async (request, response) => {
+    const files = collectImportFiles(request)
+    if (!files.length) {
+      response.status(400).json({ message: 'files is required' })
+      return
+    }
+
+    const imported: TemplateMetadata[] = []
+    const failed: TemplateImportFailure[] = []
+    for (const rawFile of files) {
+      const file = normalizeMultipartFileName(rawFile)
+      try {
+        const entries = await parseImportFile(file, engine)
+        for (const entry of entries) {
+          try {
+            imported.push(await store.createImported(entry))
+          } catch (error) {
+            failed.push({ name: entry.name, message: resolveImportError(error) })
+          }
+        }
+      } catch (error) {
+        failed.push({ name: file.originalname, message: resolveImportError(error) })
+      }
+    }
+
+    const result: TemplateImportResult = { imported, failed }
+    response.json(result)
   }))
 
   router.get('/:id/content', asyncRoute(async (request, response) => {
@@ -104,6 +140,17 @@ function asyncRoute(handler: AsyncRouteHandler) {
 function collectUploadedFiles(request: Request): Record<string, Express.Multer.File[]> {
   if (!request.files || Array.isArray(request.files)) return {}
   return request.files
+}
+
+/** Collects files uploaded with the batch import array field. */
+function collectImportFiles(request: Request): Express.Multer.File[] {
+  return Array.isArray(request.files) ? request.files : []
+}
+
+/** Converts any thrown error into a stable import failure message. */
+function resolveImportError(error: unknown): string {
+  if (error instanceof TemplateStoreError) return error.message
+  return error instanceof Error ? error.message : String(error)
 }
 
 /** Reads a required text field and throws a 400 error when absent. */

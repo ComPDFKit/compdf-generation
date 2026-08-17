@@ -11,18 +11,21 @@ import {
   File1Icon,
   SearchIcon,
   TagIcon,
+  FileImportIcon,
 } from 'tdesign-icons-vue-next'
 
 import {
   apiCreateTemplateApi,
   apiDeleteTemplateApi,
   apiDownloadTemplateApi,
+  apiImportTemplatesApi,
   apiSearchTemplatesApi,
   apiUpdateTemplateApi,
 } from '@/api'
 import type { TemplateRecord } from '@/api/model'
 import AppHeader from '@/components/AppHeader.vue'
 import TemplateFormDialog from '@/components/TemplateFormDialog.vue'
+import TemplateImportDialog from '@/components/TemplateImportDialog.vue'
 import type { TemplateFormValues } from '@/components/TemplateFormDialog.vue'
 
 const { t } = useI18n()
@@ -31,6 +34,8 @@ const keyword = ref('')
 const templates = ref<TemplateRecord[]>([])
 const loading = ref(false)
 const dialogVisible = ref(false)
+const importDialogVisible = ref(false)
+const importing = ref(false)
 const submitting = ref(false)
 const editingTemplate = ref<TemplateRecord | null>(null)
 let searchTimer: ReturnType<typeof setTimeout> | undefined
@@ -66,6 +71,39 @@ async function loadTemplates() {
 function openCreateDialog() {
   editingTemplate.value = null
   dialogVisible.value = true
+}
+
+/** Opens the bulk template import dialog. */
+function openImportDialog() {
+  importDialogVisible.value = true
+}
+
+/** Imports the selected template files and refreshes the template list. */
+async function handleImportTemplates(files: File[]) {
+  importing.value = true
+  try {
+    const result = await apiImportTemplatesApi(files)
+    const successCount = result.imported.length
+    const failedCount = result.failed.length
+    if(failedCount == 0){
+      MessagePlugin.success(t('template.import.success'))
+    }else if (successCount == 0) {
+      MessagePlugin.warning(t('template.import.noUsable'))
+    } else {
+      MessagePlugin.info(t('template.import.summary', {
+        totalCount: successCount + failedCount,
+        successCount,
+        failedCount,
+      }))
+    }
+    await loadTemplates()
+  } catch (error) {
+    console.error(error)
+    MessagePlugin.error(t('template.import.failed'))
+  } finally {
+    importing.value = false
+    importDialogVisible.value = false
+  }
 }
 
 /** Opens the edit dialog and pre-fills the selected template. */
@@ -182,6 +220,12 @@ function confirmDeleteTemplate(template: TemplateRecord) {
                 <span>{{ t('template.countLabel') }}</span>
                 <strong>{{ t('template.count', { count: templates.length }) }}</strong>
               </div>
+              <t-button class="new-template-button" size="large" theme="primary" @click="openImportDialog" variant="outline">
+                <template #icon>
+                  <FileImportIcon />
+                </template>
+                {{ t('template.import.button') }}
+              </t-button>
               <t-button class="new-template-button" size="large" @click="openCreateDialog">
                 <template #icon>
                   <AddIcon />
@@ -264,6 +308,12 @@ function confirmDeleteTemplate(template: TemplateRecord) {
       :submitting="submitting"
       :template="editingTemplate"
       @submit="submitTemplate"
+    />
+
+    <TemplateImportDialog
+      v-model:visible="importDialogVisible"
+      :importing="importing"
+      @confirm="handleImportTemplates"
     />
   </div>
 </template>
