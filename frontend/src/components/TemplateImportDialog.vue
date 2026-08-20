@@ -53,7 +53,7 @@ function resetDialog() {
 
 /** Checks whether a file uses one of the supported batch-import extensions. */
 function isSupportedFile(file: File): boolean {
-  return /\.(html?|zip|dito)$/i.test(file.name)
+  return /\.(zip|dito)$/i.test(file.name)
 }
 
 /** Adds supported files while skipping duplicates and unsupported extensions. */
@@ -107,7 +107,10 @@ function handleConfirm() {
     :width="600"
     :header="t('template.import.title')"
     :cancel-btn="t('template.form.cancel')"
-    :confirm-btn="t('template.editor.importData')"
+    :confirm-btn="{
+      content: t('template.editor.importData'),
+      disabled: selectedFiles.length === 0,
+    }"
     :confirm-loading="importing"
     :close-on-overlay-click="!importing"
     :close-on-esc-keydown="!importing"
@@ -145,7 +148,7 @@ function handleConfirm() {
           ref="fileInput"
           class="visually-hidden"
           type="file"
-          accept=".html,.htm,.zip,.dito"
+          accept=".zip,.dito"
           multiple
           @change="handleFileChange"
         >

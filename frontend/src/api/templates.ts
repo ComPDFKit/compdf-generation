@@ -56,7 +56,7 @@ export async function apiCreateTemplateApi(params: CreateTemplateParams): Promis
   }
 }
 
-/** Imports HTML, DITO, and ZIP template packages in a batch. */
+/** Imports DITO files and system template packages in a batch. */
 export async function apiImportTemplatesApi(files: File[]): Promise<TemplateImportResult> {
   const form = new FormData()
   files.forEach(file => form.append('files', file))
