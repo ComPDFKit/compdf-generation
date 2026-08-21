@@ -2,95 +2,95 @@
 
 [English](README.md) | [繁體中文](README_TW.md) | [日本語](README_JA.md) | [简体中文](README_CN.md)
 
-# ComPDF Generation - Open-Source PDF Document Generation SDK
+# ComPDF Generation — Open-Source Self-Hosted PDF Generation SDK & Platform
 
-**ComPDF Generation** is part of the KDAN ecosystem. It is an open-source PDF document generation SDK built for developers and enterprise systems that need to automate contracts, invoices, reports, certificates, and other business documents, balancing output quality, integration efficiency, and a clear path to commercial deployment.
-
-> - If ComPDF Generation helps your project, we'd love your ⭐ **Star** on GitHub.
-> - If you have questions, suggestions, or real-world use cases to discuss, feel free to reach out through **[Issues](https://github.com/ComPDFKit/compdf-generation/issues)** and **[Discussions](https://github.com/ComPDFKit/compdf-generation/discussions)**.
+Generate business PDFs from HTML templates and JSON data with visual template editing, reusable templates, batch processing, and API integration.
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/license-AGPL%20v3%20%2B%20Commercial-blue" alt="License"></a>
-  <a href="#"><img src="https://img.shields.io/github/stars/ComPDFKit/compdf-generation" alt="GitHub Stars"></a>
-  <a href="#"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs Welcome"></a>
+  <a href="https://github.com/ComPDFKit/compdf-generation/stargazers"><img src="https://img.shields.io/github/stars/ComPDFKit/compdf-generation?style=flat-square" alt="GitHub Stars"></a>
+  <a href="https://github.com/ComPDFKit/compdf-generation/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-AGPL%20v3%20%2B%20Commercial-blue?style=flat-square" alt="License: AGPL v3 + Commercial"></a>
+  <a href="https://github.com/ComPDFKit/compdf-generation/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs Welcome"></a>
 </p>
 
 <p align="center">
-  <a href="#why-compdf-generation"><b>Why ComPDF Generation</b></a> •
-  <a href="#core-capabilities"><b>Core Capabilities</b></a> •
-  <a href="#quick-start"><b>Quick Start</b></a> •
-  <a href="#when-to-upgrade-to-the-commercial-edition"><b>Commercial Upgrade</b></a> •
-  <a href="#use-cases"><b>Use Cases</b></a> •
-  <a href="#compdf-generation-vs-other-open-source-pdf-libraries"><b>Comparison</b></a> •
-  <a href="#license"><b>License</b></a> •
-  <a href="#support"><b>Support</b></a>
+  <a href="https://www.compdf.com/guides/pdf-sdk/self-hosted-generation/user-manual?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en">Documentation</a>
+    •  
+  <a href="https://www.compdf.com?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en">Website</a>
+    •  
+  <a href="https://github.com/ComPDFKit/compdf-generation/discussions">Discussions</a>
 </p>
+
+</div>
+
+---
+
+## Contents
+
+- [Why ComPDF Generation](#why-compdf-generation)
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [User Guide](#user-guide)
+- [Deployment Configuration](#deployment-configuration)
+- [Use Cases](#use-cases)
+- [Open Source & Commercial Editions](#open-source--commercial-editions)
+- [Comparison with Other Open-Source PDF Libraries](#comparison-with-other-open-source-pdf-libraries)
+- [License](#license)
+- [Support](#support)
+
+---
 
 ## Why ComPDF Generation
 
-**ComPDF Generation** is designed to improve integration speed and template reusability for **business document generation** workflows. With a visual template editor and real-time preview, teams can create templates and test document output with zero-code support. API access is also available, making it easy to build automated, template-driven document workflows.
+ComPDF Generation is an open-source, self-hosted PDF generation SDK and platform for developers and teams that need reusable, template-based document workflows. It keeps deployment, templates, and workflow integration under your control.
 
-### Key Advantages
+## Features
 
-- Built for contracts, invoices, reports, certificates, and other business documents
-- Supports HTML-template-based PDF generation
-- No document generation quota, with multithreaded processing for higher batch efficiency
-- Helps AI agents generate documents while reducing token usage
-- Open-sourced under AGPL for fast evaluation and prototyping
-- Offers a commercial license for seamless production and enterprise deployment
+- **Visual Template Editor** — Create, test, and preview templates visually. Edit HTML directly when advanced customization is needed.
+- **Self-Hosted Web UI and API** — Manage templates in the Web UI, then integrate workflows through API access and SDK capabilities.
+- **Structured JSON Data** — Generate customized documents from JSON data sources.
+- **High-Volume Processing** — Use multithreaded batch generation with no document-generation quota.
+- **AI-Friendly Workflows** — Use structured templates and data inputs to support AI-assisted document workflows and reduce repeated prompt construction.
+- **Batch Template Import and Migration** — Import DITO templates and ComPDF Generation templates in batches, making it easy to migrate smoothly from iText and other competing PDF generation solutions to ComPDF Generation. Imported templates can be edited as needed for flexible reuse.
 
-## Core Capabilities
+<div align="center">
+<img src="./images/example.gif" width="850" alt="ComPDF Generation template editor preview">
+</div>
 
-| Module                               | Description                                                                                                                                                                                                                                     |
-| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Generate PDF from HTML templates     | Create PDFs from HTML templates and support multithreaded batch document generation                                                                                                                                                             |
-| Template editor                      | Design contracts, invoices, reports, and certificate templates visually with zero-code support                                                                                                                                                  |
-| Template management                  | Reuse and manage templates to reduce repetitive development work                                                                                                                                                                                |
-| Preview with templates and JSON data | Test templates and review final PDF output before delivery                                                                                                                                                                                      |
-| Supported Template Elements         | ComPDF Generation provides essential PDF generation capabilities, from text, tables, and images to dynamic variables, conditional logic, PDF forms, and visual templates, enabling flexible document automation for complex business workflows. |
-
-![](./images/example.gif)
+---
 
 ## Quick Start
 
-### Prerequisites
+### Windows PowerShell
 
-- Docker Desktop on Windows or macOS, or Docker Engine with the Docker Compose plugin on Linux
-- Access to pull the `compdfkit/pdf-generation:1.0.0` image from Docker Hub
-
-### Get the Project
-
-Clone the repository and enter the project directory:
-
-```bash
-git clone https://github.com/ComPDFKit/compdf-generation.git
-cd compdf-generation
-```
-
-### Configure and Launch
-
-The project includes a trial license in `.env.example`. Copy and rename this file to `.env` before deployment to use the trial license. PDFs generated with the trial license include a watermark.
-
-For production use without the trial watermark, replace `COMPDF_LICENSE_KEY` with a formal license. [Contact sales](https://www.compdf.com/zh-cn/contact-sales?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en) to obtain one. Use the command for your operating system to copy the environment file:
+Make sure Docker Desktop is installed and that you can pull the `compdfkit/pdf-generation:1.0.0` image from Docker Hub. The commands below clone the project, copy the environment file, and start the services; wait until `compdf-app` becomes `healthy`, then open `http://localhost:8090`. `.env.example` includes a trial license, which adds a watermark to generated PDFs; for production use, replace `COMPDF_LICENSE_KEY` with a formal license and [contact sales](https://www.compdf.com/contact-sales?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en) to obtain one.
 
 ```powershell
-# Windows PowerShell
+git clone https://github.com/ComPDFKit/compdf-generation.git
+cd compdf-generation
 Copy-Item .env.example .env
-```
-
-```bash
-# macOS or Linux
-cp .env.example .env
-```
-
-Start the services:
-
-```bash
 docker compose up -d --build
 docker compose ps
 ```
 
-When `compdf-app` becomes `healthy`, open `http://localhost:8090`. If you deploy to a remote Linux server, open the same address from a browser that can access the server's `8090` port.
+### macOS or Linux
+
+Make sure Docker Desktop (macOS) or Docker Engine with the Docker Compose plugin (Linux) is installed and that you can pull the `compdfkit/pdf-generation:1.0.0` image from Docker Hub. The commands below clone the project, copy the environment file, and start the services; wait until `compdf-app` becomes `healthy`, then open `http://localhost:8090`. `.env.example` includes a trial license, which adds a watermark to generated PDFs; for production use, replace `COMPDF_LICENSE_KEY` with a formal license and [contact sales](https://www.compdf.com/contact-sales?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en) to obtain one.
+
+```bash
+git clone https://github.com/ComPDFKit/compdf-generation.git
+cd compdf-generation
+cp .env.example .env
+docker compose up -d --build
+docker compose ps
+```
+
+For a remote Linux server, open the same address from a browser that can access the server's `8090` port. Templates are stored in `TEMPLATE_STORAGE_DIR`, which defaults to `./data/templates`; rebuilding the application container does not remove this data.
+
+## User Guide
+
+See the [Self-Hosted Generation User Manual](https://www.compdf.com/guides/pdf-sdk/self-hosted-generation/user-manual?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en) for template authoring and data binding.
+
+## Deployment Configuration
 
 ### Environment Variables
 
@@ -105,25 +105,22 @@ Before starting the services, you can configure the following variables in `.env
 | `COMPDF_TIMEOUT_MS`     | `120000`                | Maximum time in milliseconds for the Web/API services to wait for the ComPDF engine. Increase this for large or complex templates.         |
 | `TEMPLATE_STORAGE_DIR`  | `./data/templates`      | Host directory used to persist HTML templates, JSON data sources, and metadata. Use an absolute path if you need a fixed storage location. |
 
-### Verify the Deployment
-
 ```bash
 docker compose ps
 docker compose logs --tail=100 compdf-generation compdf-app
 ```
 
-Both services should be running, and `compdf-app` must be `healthy` before PDF generation is available. If the service needs to be accessed from other devices, allow inbound TCP traffic on `APP_PORT` (default `8090`) in the server firewall or security group.
+`compdf-app` must be `healthy` before PDF generation is available. Templates are stored in `TEMPLATE_STORAGE_DIR` (`./data/templates` by default), and rebuilding the application container does not remove this data.
 
-### Create a Template and Generate a PDF
+## Use Cases
 
-1. Create a new template in the template list and enter its name and description.
-2. Open the template editor and write the HTML content.
-3. Add JSON data as needed, then save the template.
-4. Generate the PDF in the editor, and the browser will download the file.
+- Automated contracts and agreements
+- Invoices, statements, and financial documents
+- Batch monthly, quarterly, and analytical reports
+- Certificates and standardized proof documents
+- On-demand PDF output for CRM, ERP, OA, and other internal systems
 
-Templates are stored in `TEMPLATE_STORAGE_DIR`, which defaults to `./data/templates`. Rebuilding the application container does not remove this data.
-
-## When to Upgrade to the Commercial Edition
+## Open Source & Commercial Editions
 
 Need production deployment, watermark-free output, or enterprise support? Upgrade to the [commercial edition](https://www.compdf.com/contact-sales?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en).
 
@@ -138,15 +135,9 @@ Need production deployment, watermark-free output, or enterprise support? Upgrad
 | SLA / technical support         | Community support   | Dedicated support  |
 | License                         | AGPL v3             | Commercial License |
 
-## Use Cases
+For production deployment, use a formal commercial License and follow your organization's operational and compliance requirements.
 
-- **Automated contract generation**: Draft and populate sales contracts, procurement agreements, service terms, and more to shorten signing cycles.
-- **Automated invoices and financial documents**: Connect business data to generate VAT invoices, settlement forms, statements, and other financial documents with fewer manual errors.
-- **Batch report generation**: Produce monthly reports, quarterly reports, and analytical reports at scale for high-frequency business workflows.
-- **Certificate and proof document generation**: Quickly create employment certificates, academic certificates, qualification documents, and other standardized proof documents.
-- **PDF output for internal systems**: Integrate with CRM, ERP, OA, and other enterprise systems to export forms, approvals, and business documents on demand.
-
-## ComPDF Generation vs Other Open-Source PDF Libraries
+## Comparison with Other Open-Source PDF Libraries
 
 | Dimension           | ComPDF Generation                                                             | Other PDF Libraries                             |
 | ------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------- |
@@ -158,25 +149,22 @@ Need production deployment, watermark-free output, or enterprise support? Upgrad
 
 ## License
 
-- The open-source portion of this project is released under the **GNU Affero General Public License v3.0**.
-- If you need to use it in a closed-source commercial project, formal production environment, or enterprise delivery scenario, please apply for a **commercial License**.
-- See the [LICENSE](LICENSE) file in this repository for details.
+- The open-source portion of this project is released under the [GNU Affero General Public License v3.0](LICENSE).
+- For closed-source commercial projects, formal production environments, or enterprise delivery, please apply for a **commercial License**.
 
 ## Support
 
-If you have any questions or suggestions, you are welcome to:
-
-- Submit an [Issue](https://github.com/ComPDFKit/compdf-generation/issues)
-- Join the [Discussions](https://github.com/ComPDFKit/compdf-generation/discussions)
-- [Contact the ComPDF team](https://www.compdf.com/contact-sales?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en) for a commercial License
-
-If ComPDF Generation helps your project, we'd love your ⭐ **Star**.
+Submit an [Issue](https://github.com/ComPDFKit/compdf-generation/issues), join [Discussions](https://github.com/ComPDFKit/compdf-generation/discussions), or contact the ComPDF team for a commercial License.
 
 ---
 
-<p align="center">
-  <b>Built by the ComPDF team.</b><br>
-  <a href="https://www.compdf.com/?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en">Website</a> ·
-  <a href="https://www.compdf.com/contact-sales?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en">Contact Sales</a> ·
-  <a href="https://www.compdf.com/guides/generation-sdk/java/overview?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en">Documentation</a>
-</p>
+<div align="center">
+  <p><strong>Built by the ComPDF team.</strong></p>
+  <p>
+    <a href="https://www.compdf.com?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en">Website</a>
+      ·  
+    <a href="https://www.compdf.com/contact-sales?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en">Contact Sales</a>
+      ·  
+    <a href="https://www.compdf.com/guides/pdf-sdk/self-hosted-generation/user-manual?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_en">Documentation</a>
+  </p>
+</div>

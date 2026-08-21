@@ -2,184 +2,169 @@
 
 [English](README.md) | [繁體中文](README_TW.md) | [日本語](README_JA.md) | [简体中文](README_CN.md)
 
-# ComPDF Generation - 开源 PDF 文档生成 SDK
+# ComPDF Generation — 开源私有化部署 PDF 生成 SDK 与平台
 
-**ComPDF Generation** 是 KDAN 生态的一部分，面向开发者与企业业务系统的开源 PDF 文档生成 SDK，适用于合同、发票、报告、证书等自动化文档生成场景，兼顾生成效果、接入效率与商业升级路径。
-
-> - 如果你觉得 ComPDF Generation 对你的项目有帮助，欢迎在 GitHub 上给我们一个 ⭐ **Star**。
-> - 有问题、建议或场景需求，欢迎通过 **[Issues](https://github.com/ComPDFKit/compdf-generation/issues)** 与 **[Discussions](https://github.com/ComPDFKit/compdf-generation/discussions)** 与我们交流。
+通过 HTML 模板和 JSON 数据生成业务 PDF，支持可视化模板编辑、模板复用、批量处理和 API 集成。
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/license-AGPL%20v3%20%2B%20Commercial-blue" alt="License"></a>
-  <a href="#"><img src="https://img.shields.io/github/stars/ComPDFKit/compdf-generation" alt="GitHub Stars"></a>
-    <a href="#"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs Welcome"></a>
+  <a href="https://github.com/ComPDFKit/compdf-generation/stargazers"><img src="https://img.shields.io/github/stars/ComPDFKit/compdf-generation?style=flat-square" alt="GitHub Stars"></a>
+  <a href="https://github.com/ComPDFKit/compdf-generation/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-AGPL%20v3%20%2B%20Commercial-blue?style=flat-square" alt="许可证: AGPL v3 + Commercial"></a>
+  <a href="https://github.com/ComPDFKit/compdf-generation/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs Welcome"></a>
 </p>
 
 <p align="center">
-  <a href="#为什么选择-compdf-generation"><b>为什么选择 ComPDF Generation</b></a> •
-  <a href="#功能"><b>功能</b></a> •
-  <a href="#快速开始"><b>快速开始</b></a> •
-  <a href="#为什么升级为商业版compdf-generation"><b>升级为商业版</b></a> •
-  <a href="#适用场景"><b>适用场景</b></a> •
-  <a href="#compdf-generation-开源项目-vs-其他开源-pdf-库"><b>ComPDF Generation 开源项目 vs 其他开源 PDF 库</b></a> •
-  <a href="#许可协议"><b>许可协议</b></a> •
-   <a href="#支持"><b>支持</b></a> 
+  <a href="https://www.compdf.com/guides/pdf-sdk/self-hosted-generation/user-manual?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_cn">文档</a>
+    •  
+  <a href="https://www.compdf.com?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_cn">官网</a>
+    •  
+  <a href="https://github.com/ComPDFKit/compdf-generation/discussions">讨论区</a>
 </p>
+
+</div>
+
+---
+
+## 目录
+
+- [为什么选择 ComPDF Generation](#为什么选择-compdf-generation)
+- [功能特性](#功能特性)
+- [快速开始](#快速开始)
+- [用户指南](#用户指南)
+- [部署配置](#部署配置)
+- [应用场景](#应用场景)
+- [开源版与商业版](#开源版与商业版)
+- [与其他开源 PDF 库的对比](#与其他开源-pdf-库的对比)
+- [许可证](#许可证)
+- [支持](#支持)
+
+---
 
 ## 为什么选择 ComPDF Generation
 
-**ComPDF Generation** 专注提升**业务文档生成**场景下的接入效率与模板复用能力。支持零代码操作，用户可通过可视化模板编辑器实时预览，轻松完成模板创建与文档生成测试；同时提供 API 接口，便于串联构建基于模板的文档生成自动化工作流。
+ComPDF Generation 是面向开发者和团队的开源、私有化部署 PDF 生成 SDK 与平台，适用于需要基于模板反复生成业务文档的工作流。它支持以结构化数据生成业务文档，并让团队自主掌控部署、模板和工作流集成。
 
-### 核心优势
+## 功能特性
 
-- 面向合同、发票、报告、证书等业务文档场景
-- 支持基于 HTML 模板的 PDF 生成流程
-- 不限文档生成数量、支持多线程文档生成，有效提升批量文档生成效率
-- 可赋能 Agent 文档生成，降低 AI Token 消耗
-- AGPL 开源，便于开发者快速验证
-- 提供商业版 License，可无缝向正式生产与企业场景升级
+- **可视化模板编辑**：以可视化方式创建、测试和预览模板；需要高级定制时，可直接编辑 HTML。
+- **私有化 Web UI 与 API**：通过私有化 Web UI 管理和测试模板，并通过 API 与 SDK 能力将文档生成工作流接入应用。
+- **JSON 数据支持**：使用 JSON 数据源生成定制化文档。
+- **高容量处理**：支持多线程批量生成，不设文档生成配额。
+- **面向 AI 的文档工作流**：使用结构化模板和数据输入支持 AI 辅助文档工作流，减少重复构建提示词。
+- **批量模板导入与迁移**：*支持批量导入 DITO 模板及 ComPDF Generation 模板，轻松实现从 iText 等竞品到 ComPDF Generation 的平滑迁移。导入后的模板支持按需编辑，灵活使用。*
 
-## 功能
+<div align="center">    
+<img src="./images/example.gif" width="850" alt="ComPDF Generation template editor preview">    
+</div>
 
-| 能力模块                         | 说明                                                                                                                   |
-| ---------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| HTML 模板生成 PDF 文件             | 基于 HTML 模板，生成 PDF 生成 <br/>支持多线程批量生成文档                                                                                |
-| 模板编辑器                        | 提供模板编辑器，支持零代码和可视化地围绕业务场景自由设计合同、发票、报告、证书模板                                                                            |
-| 模板管理                         | 支持基础模板管理与复用，降低重复开发成本                                                                                                 |
-| 基于模板与 JSON 数据生成预览            | 便于测试模板和最终 PDF 输出效果                                                                                                   |
-| 模板支持元素 | ComPDF Generation 支持文本、表格、图片、超链接、页眉页脚、页码、条码、CSS 样式、动态变量与计算、循环/条件逻辑、PDF 表单及可视化模板编辑等核心 PDF 生成元素，可满足复杂业务文档的模板化与动态化生成需求。 |
-
-![](./images/example.gif)
 
 ## 快速开始
 
-### 开始前准备
+### Windows PowerShell
 
-- Windows 或 macOS 上的 Docker Desktop，或 Linux 上的 Docker Engine 和 Docker Compose plugin。
-- 可从 Docker Hub 拉取 `compdfkit/pdf-generation:1.0.0` 镜像。
-
-### 获取项目
-
-克隆仓库并进入项目目录：
-
-```bash
-git clone https://github.com/ComPDFKit/compdf-generation.git
-cd compdf-generation
-```
-
-### 配置并启动
-项目会在 `.env.example` 中提供试用 License。部署前复制该文件重命名为`.env`即可使用试用 License；使用试用 License 生成的 PDF 会带有水印。
-
-正式生产使用时，请将 `COMPDF_LICENSE_KEY` 替换为正式 License，以移除试用水印。可[联系销售](https://www.compdf.com/zh-cn/contact-sales?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_cn)获取正式 License。请根据操作系统选择对应命令复制环境变量文件：
+请确认已安装 Docker Desktop，并可从 Docker Hub 拉取 `compdfkit/pdf-generation:1.0.0` 镜像；以下命令会克隆项目、复制环境变量文件并启动服务，确认 `compdf-app` 的状态变为 `healthy` 后访问 `http://localhost:8090`。`.env.example` 中提供试用许可证，生成的 PDF 会带有水印；正式生产使用时，请将 `COMPDF_LICENSE_KEY` 替换为正式许可证，并可[联系销售](https://www.compdf.com/zh-cn/contact-sales?utm_source=github_generation_newopen\&utm_medium=referral\&utm_campaign=generation_open\&ref_platform_id=github_compdf_cn)获取正式许可证。
 
 ```powershell
-# Windows PowerShell
+git clone https://github.com/ComPDFKit/compdf-generation.git
+cd compdf-generation
 Copy-Item .env.example .env
-```
-
-```bash
-# macOS 或 Linux
-cp .env.example .env
-```
-
-启动服务：
-
-```bash
 docker compose up -d --build
 docker compose ps
 ```
 
-当`compdf-app` 状态变为 `healthy` 后，打开 `http://localhost:8090`。部署到远程 Linux 服务器时，请在能访问该服务器 `8090` 端口的浏览器中打开该地址。
+### macOS 或 Linux
+
+请确认已安装 Docker Desktop（macOS）或带 Docker Compose 插件的 Docker Engine（Linux），并可从 Docker Hub 拉取 `compdfkit/pdf-generation:1.0.0` 镜像；以下命令会克隆项目、复制环境变量文件并启动服务，确认 `compdf-app` 的状态变为 `healthy` 后访问 `http://localhost:8090`。`.env.example` 中提供试用许可证，生成的 PDF 会带有水印；正式生产使用时，请将 `COMPDF_LICENSE_KEY` 替换为正式许可证，并可[联系销售](https://www.compdf.com/zh-cn/contact-sales?utm_source=github_generation_newopen\&utm_medium=referral\&utm_campaign=generation_open\&ref_platform_id=github_compdf_cn)获取正式许可证。
+
+```bash
+git clone https://github.com/ComPDFKit/compdf-generation.git
+cd compdf-generation
+cp .env.example .env
+docker compose up -d --build
+docker compose ps
+```
+
+如果部署在远程 Linux 服务器上，请在可访问该服务器 `8090` 端口的浏览器中打开对应地址。
+
+## 用户指南
+
+有关模板编写和数据绑定，请参阅[私有化部署文档生成用户指南](https://www.compdf.com/zh-cn/guides/pdf-sdk/self-hosted-generation/user-manual?utm_source=github_generation_newopen\&utm_medium=referral\&utm_campaign=generation_open\&ref_platform_id=github_compdf_cn)。
+
+## 部署配置
 
 ### 环境变量
 
 启动服务前，可在 `.env` 中配置以下变量：
 
-| 变量                      | 默认值                     | 说明                                                                                             |
-| ----------------------- | ----------------------- | ---------------------------------------------------------------------------------------------- |
-| `COMPDF_LICENSE_KEY`    | 必填                      | 具有 PDF Generation 或 HTML 转 PDF 权限的 ComPDF License Key。`.env.example` 中提供的试用 Key 生成的 PDF 会带有水印。 |
-| `COMPDF_IMAGE_PLATFORM` | `linux/amd64`           | `compdf-app` 镜像使用的平台。仅当镜像支持部署主机所需的平台时才修改该值。                                                    |
-| `NODE_IMAGE`            | `node:22-bookworm-slim` | 用于构建 Web 和 API 服务 Docker 多阶段镜像的 Node.js 镜像。                                                    |
-| `APP_PORT`              | `8090`                  | 映射到宿主机的 ComPDF Generate Web 界面和 API 端口。`8090` 被占用时可改为其他可用端口。                                   |
-| `COMPDF_TIMEOUT_MS`     | `120000`                | Web/API 服务等待 ComPDF 引擎响应的最长时间，单位为毫秒。处理大型或复杂模板耗时较长时，可适当调大此值。                                    |
-| `TEMPLATE_STORAGE_DIR`  | `./data/templates`      | 宿主机上用于持久化 HTML 模板、JSON 数据源和元数据的目录。部署需要固定数据位置时可使用绝对路径。                                          |
-
-### 验证部署
+| 变量                      | 默认值                     | 说明                                                                           |
+| ----------------------- | ----------------------- | ---------------------------------------------------------------------------- |
+| `COMPDF_LICENSE_KEY`    | 必填                      | 具有 PDF 生成或 HTML 转 PDF 权限的 ComPDF 许可证密钥。`.env.example` 中提供的试用密钥生成的 PDF 会带有水印。 |
+| `COMPDF_IMAGE_PLATFORM` | `linux/amd64`           | `compdf-app` 镜像使用的平台。仅当镜像支持部署主机所需的平台时才修改该值。                                  |
+| `NODE_IMAGE`            | `node:22-bookworm-slim` | 用于构建 Web 和 API 服务 Docker 多阶段镜像的 Node.js 镜像。                                  |
+| `APP_PORT`              | `8090`                  | 映射到宿主机的 ComPDF Generation Web 界面和 API 端口。`8090` 被占用时可改为其他可用端口。               |
+| `COMPDF_TIMEOUT_MS`     | `120000`                | Web/API 服务等待 ComPDF 引擎响应的最长时间，单位为毫秒。处理大型或复杂模板耗时较长时，可适当调大此值。                  |
+| `TEMPLATE_STORAGE_DIR`  | `./data/templates`      | 宿主机上用于持久化 HTML 模板、JSON 数据源和元数据的目录。部署需要固定数据位置时可使用绝对路径。                        |
 
 ```bash
 docker compose ps
-docker compose logs --tail=100 compdf-generate compdf-app
+docker compose logs --tail=100 compdf-generation compdf-app
 ```
 
-两个服务均需处于运行状态，且 `compdf-app` 必须为 healthy 后才能生成 PDF。需要从其他设备访问服务时，请在服务器防火墙或安全组中放行 `APP_PORT`（默认 `8090`）的入站 TCP 流量。
+在 PDF 生成功能可用前，`compdf-app` 必须处于 `healthy` 状态。模板存储在 `TEMPLATE_STORAGE_DIR` 中（默认为 `./data/templates`），重新构建应用容器不会删除这些数据。
 
-### 创建并生成模板
+## 应用场景
 
-1. 在模板列表中新建模板，并填写名称和描述。
-2. 打开模板编辑器，编写 HTML 内容。
-3. 按需添加 JSON 数据，并保存模板。
-4. 在编辑器中生成 PDF，浏览器会下载结果文件。
+- 自动生成合同和协议
+- 发票、对账单和财务文件
+- 批量生成月报、季报和分析报告
+- 证书和标准化证明文件
+- CRM、ERP、OA 等内部系统的按需 PDF 输出
 
-模板存储在 `TEMPLATE_STORAGE_DIR` 中，默认路径为 `./data/templates`。重建应用容器不会删除这些数据。
+## 开源版与商业版
 
-## 为什么升级为商业版ComPDF Generation
+需要生产部署、无水印输出或企业支持？请升级至[商业版](https://www.compdf.com/zh-cn/contact-sales?utm_source=github_generation_newopen\&utm_medium=referral\&utm_campaign=generation_open\&ref_platform_id=github_compdf_cn)。
 
-需要正式商业环境接入、水印去除、企业支持？您可以升级至[商业版本](https://www.compdf.com/contact-sales?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_cn)。
+| 能力           | 开源版     | 商业版   |
+| ------------ | ------- | ----- |
+| 文档生成 API     | ✅       | ✅     |
+| HTML 模板设计与导入 | ✅       | ✅     |
+| 模板管理         | ✅       | ✅     |
+| 批量生成         | ✅       | ✅     |
+| 无水印导出        | 带水印     | 无水印   |
+| 正式生产环境使用     | 不建议     | ✅     |
+| SLA / 技术支持   | 社区支持    | 专属支持  |
+| 许可证          | AGPL v3 | 商业许可证 |
 
-| 能力           | 开源版     | 商业版        |
-| ------------ | ------- | ---------- |
-| 文档生成 API     | ✅       | ✅          |
-| HTML 模板设计与导入 | ✅       | ✅          |
-| 模板管理         | ✅       | ✅          |
-| 批量生成         | ✅       | ✅          |
-| 水印导出         | 带水印     | 无水印        |
-| 正式生产环境       | 不建议     | ✅          |
-| SLA / 技术支持   | 社区支持    | 专属支持       |
-| License      | AGPL v3 | 商业 License |
+正式部署时，请使用正式的商业许可证，并遵循所在组织的运营和合规要求。
 
-## 适用场景
+## 与其他开源 PDF 库的对比
 
-* **合同自动化生成** —— 支持销售合同、采购协议、服务条款等各类合同的自动起草与填充，大幅缩短签署周期
+| 维度     | ComPDF Generation            | 其他 PDF 库     |
+| ------ | ---------------------------- | ------------ |
+| 产品定位   | 面向业务文档生成，可按业务场景轻松自定义模板       | 底层 PDF 能力封装  |
+| 文档生成能力 | 支持批量生成，不限制生成数量               | 通常存在一定限制     |
+| 重点场景   | 合同 / 发票 / 报告 / 证书            | 通用绘制与排版      |
+| 模板化能力  | 无需编码即可可视化编辑 HTML 模板，并支持导入和复用 | 需要自行开发       |
+| 商业升级路径 | 可无缝升级至商业版                    | 扩展需求通常需要自行构建 |
 
-* **发票与单据自动化生成** —— 对接业务数据，自动生成增值税发票、结算单、对账单等财务单据，减少人工操作错误
+## 许可证
 
-* **报告批量生成** —— 支持月报、季报、数据分析报告等周期性文档的批量输出，满足高频、大规模业务需求
-
-* **证书与证明文档生成** —— 快速生成员工在职证明、学历证书、资质认证等标准化证明文件，提升内部服务效率
-
-* **内部业务系统 PDF 输出** —— 无缝集成 CRM、ERP、OA 等企业系统，按需导出业务单据、审批表单等 PDF 文档
-
-## ComPDF Generation 开源项目 vs 其他开源 PDF 库
-
-| 维度     | ComPDF Generation                | 其他 PDF 库    |
-| ------ | -------------------------------- | ----------- |
-| 产品定位   | 业务文档生成，轻松按业务场景自定义模板              | 底层 PDF 能力封装 |
-| 文档生成能力 | 批量生成、不限生成数量                      | 基本存在一定限制    |
-| 场景聚焦   | 合同 / 发票 / 报告 / 证书                | 通用绘制、排版     |
-| 模板化能力  | 无需编码，可视化编辑HTML模板，支持模板导入进行设计或直接复用 | 需自行封装       |
-| 商业升级路径 | 支持无缝升级到商业版                       | 往往需自行补足拓展需求 |
-
-## 许可协议
-
-- 本项目开源部分采用 **GNU Affero General Public License v3.0** 发布。
-- 如需在闭源商业项目、正式生产环境或企业交付场景中使用，请申请 **商业版 License**。
-- 详细说明请参见仓库中的 [LICENSE](LICENSE) 文件。
+- 本项目的开源部分采用 [GNU Affero 通用公共许可证 v3.0](LICENSE) 发布。
+- 如需用于闭源商业项目、正式生产环境或企业交付场景，请申请**商业许可证**。
+- 详细信息请参阅本仓库中的 [许可证文件](LICENSE)。
 
 ## 支持
 
-有任何问题或建议，欢迎：
-
-* 提交  [Issue](https://github.com/ComPDFKit/compdf-generation/issues)
-* 参与 [Discussions](https://github.com/ComPDFKit/compdf-generation/discussions)
-* [联系 ComPDF 团队](https://www.compdf.com/contact-sales?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_cn)获取商业License
-
-如果你觉得 **ComPDF Generation** 对你的项目有帮助，欢迎给我们一个 ⭐ **Star**。
+可提交[问题反馈](https://github.com/ComPDFKit/compdf-generation/issues)、加入[讨论区](https://github.com/ComPDFKit/compdf-generation/discussions)，或联系 ComPDF 团队获取商业许可证。
 
 ---
 
-<p align="center">
-  <b>由 ComPDF 团队打造。</b><br>
-  <a href="https://www.compdf.com/?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_cn">官网</a> ·
-  <a href="https://www.compdf.com/contact-sales?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_cn">商业咨询</a> ·
-  <a href="https://www.compdf.com/guides/generation-sdk/java/overview?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_cn">文档</a>
-</p>
+<div align="center">
+  <p><strong>由 ComPDF 团队打造。</strong></p>
+  <p>
+    <a href="https://www.compdf.com?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_cn">官网</a>
+      ·  
+    <a href="https://www.compdf.com/contact-sales?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_cn">联系销售</a>
+      ·  
+    <a href="https://www.compdf.com/guides/pdf-sdk/self-hosted-generation/user-manual?utm_source=github_generation_newopen&utm_medium=referral&utm_campaign=generation_open&ref_platform_id=github_compdf_cn">文档</a>
+  </p>
+</div>
