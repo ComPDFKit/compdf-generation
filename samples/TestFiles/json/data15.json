@@ -1,0 +1,60 @@
+{
+    "address": "369 Magnolia Court",
+    "billNo": "5566778899",
+    "company": "Northern Dynamics",
+    "country": "Norway",
+    "email": "lars.olsen@northerndynamics.no",
+    "firstName": "Lars",
+    "gearLevel": "Enterprise",
+    "compdfkit": true,
+    "invoiceDate": "2025-03-25",
+    "lastName": "Olsen",
+    "paymentCycle": "Yearly",
+    "price": "5400",
+    "province": "Oslo",
+    "startDateAndEndDate": "2025-03-25 to 2026-03-25",
+    "tax": 16,
+    "zip": "0150",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Enterprise",
+            "startDateAndEndDate": "2025-03-25 to 2026-03-25",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Enterprise",
+            "price": 2000
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit Pro",
+            "startDateAndEndDate": "2025-03-25 to 2026-03-25",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Pro",
+            "price": 1200
+        },
+        {
+            "index": 3,
+            "product": "ComPDFKit SDK",
+            "startDateAndEndDate": "2025-03-25 to 2026-03-25",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Pro",
+            "price": 1000
+        },
+        {
+            "index": 4,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-03-25 to 2026-03-25",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Pro",
+            "price": 800
+        },
+        {
+            "index": 5,
+            "product": "ComPDFKit Support",
+            "startDateAndEndDate": "2025-03-25 to 2026-03-25",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Enterprise",
+            "price": 400
+        }
+    ]
+}

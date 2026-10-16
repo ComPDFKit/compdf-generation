@@ -1,0 +1,28 @@
+{
+    "address": "852 Poplar Avenue",
+    "billNo": "0123456789",
+    "company": "Startup Innovations",
+    "country": "India",
+    "email": "priya.sharma@startupinnovations.in",
+    "firstName": "Priya",
+    "gearLevel": "Basic",
+    "compdfkit": false,
+    "invoiceDate": "2025-03-01",
+    "lastName": "Sharma",
+    "paymentCycle": "Monthly",
+    "price": "60",
+    "province": "Maharashtra",
+    "startDateAndEndDate": "2025-03-01 to 2025-04-01",
+    "tax": 4,
+    "zip": "400001",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Basic",
+            "startDateAndEndDate": "2025-03-01 to 2025-04-01",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Basic",
+            "price": 60
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+From: Sample Sender <sender@example.test>
+To: Sample Recipient <recipient@example.test>
+Bcc: hidden@example.test
+Subject: =?utf-8?q?Email_API_test_=F0=9F=98=80?=
+Date: Tue, 13 Oct 2026 10:30:00 +0800
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="email-mixed"
+
+--email-mixed
+Content-Type: multipart/related; boundary="email-related"
+
+--email-related
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<!doctype html><html><body><h1>Email API example</h1><p>Email conversion test — UTF-8 and inline image.</p><p>Original message body, not an attachment.</p><img src="cid:pixel-1" width="32" height="32"><table style="border-collapse:collapse"><tr><td style="border:1px solid #666;padding:8px">Item</td><td style="border:1px solid #666;padding:8px">Quantity</td></tr><tr><td style="border:1px solid #666;padding:8px">Example</td><td style="border:1px solid #666;padding:8px">2</td></tr></table></body></html>
+--email-related
+Content-Type: image/gif
+Content-ID: <pixel-1>
+Content-Disposition: inline; filename="pixel.gif"
+Content-Transfer-Encoding: base64
+
+R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==
+--email-related--
+--email-mixed
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename*=utf-8''report-test-%F0%9F%98%80.bin
+Content-Transfer-Encoding: base64
+
+AAECA//+
+--email-mixed--

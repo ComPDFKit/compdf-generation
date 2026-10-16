@@ -1,0 +1,28 @@
+{
+    "address": "321 Maple Drive",
+    "billNo": "4567890123",
+    "company": "Digital Solutions",
+    "country": "Australia",
+    "email": "emily.chen@digitalsolutions.com.au",
+    "firstName": "Emily",
+    "gearLevel": "Basic",
+    "compdfkit": false,
+    "invoiceDate": "2025-02-01",
+    "lastName": "Chen",
+    "paymentCycle": "Monthly",
+    "price": "75",
+    "province": "New South Wales",
+    "startDateAndEndDate": "2025-02-01 to 2025-03-01",
+    "tax": 6,
+    "zip": "2000",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Basic",
+            "startDateAndEndDate": "2025-02-01 to 2025-03-01",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Basic",
+            "price": 75
+        }
+    ]
+}

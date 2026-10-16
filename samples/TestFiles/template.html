@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: ArialUnicodeMS;
+      margin: 0;
+      color: #333;
+      background: #f9f9f9;
+    }
+
+    .certificate-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px 50px;
+      border: 20px solid #1a5276;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      border-bottom: 3px double #1a5276;
+      padding-bottom: 30px;
+    }
+
+    .school-name {
+      font-size: 36px;
+      font-weight: bold;
+      color: #1a5276;
+      margin-bottom: 10px;
+    }
+
+    .school-name-en {
+      font-size: 18px;
+      color: #7f8c8d;
+      margin-bottom: 20px;
+    }
+
+    .seal {
+      position: absolute;
+      right: 100px;
+      top: 150px;
+      opacity: 0.1;
+    }
+
+    .content {
+      line-height: 2;
+      font-size: 18px;
+      text-align: justify;
+      margin: 40px 0;
+    }
+
+    .student-info {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 8px;
+      margin: 30px 0;
+    }
+
+    .info-grid {
+      overflow: hidden;
+    }
+
+    .info-item {
+      float: left;
+      width: 50%;
+      box-sizing: border-box;
+      padding: 5px 0;
+    }
+
+    .info-label {
+      font-weight: bold;
+      width: 160px;
+      color: #2c3e50;
+      display: inline-block;
+    }
+
+    .important-note {
+      background: #fff3e0;
+      padding: 20px;
+      border-left: 4px solid #ff6b6b;
+      margin: 30px 0;
+    }
+
+    .signature-area {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .signature-box {
+      text-align: center;
+      width: 250px;
+    }
+
+    .signature-line {
+      width: 200px;
+      border-top: 1px solid #000;
+      margin: 0 auto;
+      padding-top: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #7f8c8d;
+      font-size: 14px;
+    }
+
+    .watermark {
+      position: absolute;
+      opacity: 0.03;
+      font-size: 120px;
+      transform: rotate(-45deg);
+      pointer-events: none;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .certificate-container {
+        border: none;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="certificate-container">
+    <div class="watermark" style="top: 300px; left: 150px;">OFFICIAL</div>
+    <div class="header">
+      <div class="school-name">{{schoolName}}</div>
+      <div class="school-name-en">{{schoolNameEn}}</div>
+      <div>ADMISSION NOTICE</div>
+    </div>
+    <div class="content">
+      <p>Dear <strong>{{studentName}}</strong>,</p>
+      <p>Congratulations! You have been admitted to the <strong>{{majorName}}</strong> program at our university, with a
+        program duration of <strong>{{programDuration}}</strong>. Please report to the university for registration on
+        <strong>{{registrationDate}}</strong> with this admission notice.
+      </p>
+    </div>
+    <div class="student-info">
+      <h3>Admission Information Details</h3>
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="info-label">Exam No.:</span>
+          <span>{{studentId}}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">ID No.:</span>
+          <span>{{idNumber}}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Major:</span>
+          <span>{{majorName}}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Program Level:</span>
+          <span>{{programLevel}}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Duration:</span>
+          <span>{{programDuration}}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Registration Date:</span>
+          <span>{{registrationDate}}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Campus:</span>
+          <span>{{campus}}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Faculty:</span>
+          <span>{{faculty}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="important-note">
+      <h4>Important Notes</h4>
+      <p>1. Please register on time. If you have special circumstances, please contact the Admissions Office in advance
+        ({{admissionOfficePhone}}).</p>
+      <p>2. Required documents for registration: original ID card, academic certificates, eight 1-inch photos.</p>
+      <p>3. Tuition payment deadline: {{tuitionDeadline}}</p>
+    </div>
+    <div class="signature-area">
+      <div class="signature-box">
+        <div>Director of Admissions Office</div>
+        <div class="signature-line"></div>
+        <div>Date: {{issueDate}}</div>
+      </div>
+      <div class="signature-box">
+        <div>{{schoolName}}</div>
+        <div class="signature-line"></div>
+        <div>(Official Seal)</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

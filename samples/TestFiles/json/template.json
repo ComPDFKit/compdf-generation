@@ -1,0 +1,16 @@
+{
+  "schoolName": "สวัสดีครับ/ค่ะ",
+  "schoolNameEn": "Tech Valley University",
+  "studentName": "John Doe",
+  "studentId": "202509100001",
+  "idNumber": "9876543210",
+  "majorName": "Computer Science",
+  "programLevel": "Undergraduate",
+  "programDuration": "4 years",
+  "registrationDate": "2024-09-01",
+  "campus": "Main Campus",
+  "faculty": "College of Engineering",
+  "admissionOfficePhone": "212-555-1234",
+  "tuitionDeadline": "2024-08-25",
+  "issueDate": "2024-07-15"
+}

@@ -1,0 +1,36 @@
+{
+    "address": "654 Cedar Lane",
+    "billNo": "5678901234",
+    "company": "Software Dynamics",
+    "country": "Germany",
+    "email": "michael.mueller@softwaredynamics.de",
+    "firstName": "Michael",
+    "gearLevel": "Pro",
+    "compdfkit": true,
+    "invoiceDate": "2025-02-05",
+    "lastName": "Mueller",
+    "paymentCycle": "Yearly",
+    "price": "1800",
+    "province": "Bavaria",
+    "startDateAndEndDate": "2025-02-05 to 2026-02-05",
+    "tax": 10,
+    "zip": "80331",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Pro",
+            "startDateAndEndDate": "2025-02-05 to 2026-02-05",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Pro",
+            "price": 900
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-02-05 to 2026-02-05",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Pro",
+            "price": 900
+        }
+    ]
+}

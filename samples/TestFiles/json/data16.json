@@ -1,0 +1,36 @@
+{
+    "address": "572 Redwood Street",
+    "billNo": "6677889900",
+    "company": "Emerald Systems",
+    "country": "Ireland",
+    "email": "patrick.oreilly@emeraldsystems.ie",
+    "firstName": "Patrick",
+    "gearLevel": "Basic",
+    "compdfkit": false,
+    "invoiceDate": "2025-04-01",
+    "lastName": "O'Reilly",
+    "paymentCycle": "Monthly",
+    "price": "95",
+    "province": "Dublin",
+    "startDateAndEndDate": "2025-04-01 to 2025-05-01",
+    "tax": 6,
+    "zip": "D02 XY45",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Basic",
+            "startDateAndEndDate": "2025-04-01 to 2025-05-01",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Basic",
+            "price": 55
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-04-01 to 2025-05-01",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Basic",
+            "price": 40
+        }
+    ]
+}

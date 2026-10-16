@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>ComPDFKit Invoice</title>
+  <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+</head>
+
+<body style="margin: 0; padding: 0;">
+  <table cellpadding="0" cellspacing="0" width="100%" style="font-family: Helvetica; margin: 0; padding: 0; background: #F1F5FF; border: 0">
+    <tr>
+      <td>
+        <table cellpadding="0" cellspacing="0" width="640" style="border-collapse: collapse; background-color: #fff; padding: 0 40px; border: 0; margin: 0 auto">
+          <!-- Header -->
+          <tr>
+            <td style="padding: 0 40px;">
+              <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; margin: 0 auto">
+                <tr>
+                  <td style="padding-top: 40px;">
+                    <a href="https://compdf.com/" style="text-decoration: none;">
+
+                      <img 
+                        src="{% if compdfkit %}images/logo.png{% endif %}" 
+                        alt="PDF Technologies" 
+                        width="203" 
+                        height="50">
+                    </a>
+                  </td>
+                  <td style="padding-top: 40px; text-align: right;">
+                    <img src="images/invoice.png" alt="invoice" width="132">
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" style="padding-top: 16px;">
+                    <table cellpadding="0" cellspacing="0" width="auto" style="border-collapse: collapse; font-weight: bold; font-size: 13px; line-height: normal; color: #121E3F; margin-left: auto; margin-right: 0;">
+                      <tr>
+                        <td style="padding-right: 8px; text-align: right;">Invoice Number:</td>
+                        <td style="border: 1px solid #8A8EA8; padding: 2px 10px;">{{billNo}}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding-right: 8px; text-align: right;">Invoice Date:</td>
+                        <td style="border: 1px solid #8A8EA8; padding: 2px 10px;">{{invoiceDate}}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding-right: 8px; text-align: right;">Page:</td>
+                        <td style="border: 1px solid #8A8EA8; padding: 2px 10px;">1</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Separator -->
+          <tr>
+            <td style="padding: 0 40px;">
+              <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; margin: 0 auto;">
+                <tr>
+                  <td style="padding-top: 1px; border-bottom: 4px solid #F3F3F3;">
+                    &nbsp;&nbsp;&nbsp;
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Body -->
+          <tr>
+            <td style="padding: 0 40px;">
+              <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; margin: 0 auto;">
+                <tr>
+                  <td colspan="2"  style="padding-top: 30px;">
+                    <div style="font-weight: bold;font-size: 13px; line-height: 15px; color: #121E3F;">Bill To:</div>
+                  </td>
+                  <td colspan="2"  style="padding-top: 30px;">
+                    <div style="font-weight: bold;font-size: 13px; line-height: 15px; color: #121E3F;">Bill From:</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 16px; padding-right: 11px; font-weight: bold; font-size: 13px; line-height: 15px; color: #121E3F;">Name</td>
+                  <td width="120" style="padding-top: 16px; padding-right: 45px; font-size: 13px; line-height: 15px; color: #121E3F; word-break:break-all;">{{lastName}} {{firstName}}</td>
+                  <td style="padding-top: 16px; padding-right: 11px; font-weight: bold; font-size: 13px; line-height: 15px; color: #121E3F;">Company Name</td>
+                  <td style="padding-top: 16px; font-size: 13px; line-height: 15px; color: #121E3F;">PDF Technologies, Inc.</td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 16px; padding-right: 11px; font-weight: bold; font-size: 13px; line-height: 15px; color: #121E3F;">Email</td>
+                  <td width="120" style="padding-top: 16px; padding-right: 45px; font-size: 13px; line-height: 15px; color: #121E3F; word-break:break-all;">{{email}}</td>
+                  <td colspan="2" style="padding-top: 16px; font-weight: bold; font-size: 13px; line-height: 15px; color: #121E3F;">Company Address</td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 16px; padding-right: 11px; font-weight: bold; font-size: 13px; line-height: 15px; color: #121E3F;">Company Name</td>
+                  <td style="padding-top: 16px; padding-right: 45px; font-size: 13px; line-height: 15px; color: #121E3F; word-break:break-all;">{{company}}</td>
+                  <td colspan="2" rowspan ="2" style="width: 220px; padding-top: 8px; font-size: 13px; line-height: 24px; color: #121E3F;  vertical-align: top;">49F-0708., Changsha Shimao World Financial Center, No.393, Jianxiang Rd., Furong Dist., Changsha City, China</td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 16px; padding-right: 11px; font-weight: bold; font-size: 13px; line-height: 15px; color: #121E3F;">Country</td>
+                  <td style="padding-top: 16px; padding-right: 45px; font-size: 13px; line-height: 15px; color: #121E3F; word-break:break-all;">{{country}}</td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 16px; padding-right: 11px; font-weight: bold; font-size: 13px; line-height: 15px; color: #121E3F;">States</td>
+                  <td style="padding-top: 16px; padding-right: 45px; font-size: 13px; line-height: 15px; color: #121E3F;">{{province}}</td>
+                  <td style="padding-right: 20px; font-weight: bold; font-size: 13px; line-height: 15px; color: #121E3F;">Company Email</td>
+                  <td style="width: 160px; font-size: 13px; line-height: 15px; color: #121E3F;"><a href="mailto:support@compdf.com" style="color: #3B99FC;">support@compdf.com.</a></td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 16px; padding-right: 11px; font-weight: bold; font-size: 13px; line-height: 15px; color: #121E3F;">Zip Code</td>
+                  <td style="padding-top: 16px; padding-right: 45px; font-size: 13px; line-height: 15px; color: #121E3F;">{{zip}}</td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 16px; padding-right: 11px; font-weight: bold; font-size: 13px; line-height: 15px; color: #121E3F;">Company Address</td>
+                  <td style="padding-top: 16px; padding-right: 45px; font-size: 13px; line-height: 15px; color: #121E3F;">{{address}}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Dashed separator -->
+          <tr>
+            <td style="padding: 0 40px 20px;">
+              <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; margin: 0 auto;">
+                <tr>
+                  <td style="padding-top: 20px;">
+                    <img src="images/Line.png" alt="Line">
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- List -->
+          <tr>
+            <td style="padding: 0px 40px 12px; color: #121E3F; font-family: Helvetica; font-size: 20px; font-style: normal; font-weight: 700; line-height: normal;">Invoice Details:</td>
+          </tr>
+          <tr>
+            <td style="padding: 0px 40px;">
+              <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                <tr style="background:#D0D8ED;color:#FFFFFF; height:40px;" >
+                  <td style="text-align:left;padding-left:10px; text-align: left;font-size: 13px;height:40px; width: 70px;">Num.</td>
+                  <td style="text-align:left;font-size:13px;height:40px; width: 160px;">Products</td>
+                  <td style="text-align:left;font-size:13px;height:40px; width: 130px;">Payment Cycle</td>
+                  <td style="text-align:left;font-size:13px;height:40px; width: 100px;">Gear Level</td>
+                  <td style="text-align:left; padding-right: 18px; width: 100px;font-size: 13px;height:40px;">Price</td>
+                </tr>
+
+                <!-- {% set totalprice = 0 %} -->
+                <!-- {% for item in items %} -->
+                <tr style="height:64px;color:#333;">
+                  <td style="width:70px;height:70px;border-bottom: 2px solid #F3F3F3; padding-left: 10px; text-align: left;">
+                    {{ item.index }}
+                  </td>
+                  <td style="width: 160px;border-bottom: 2px solid #F3F3F3; font-size: 13px; line-height: 15px; color: #121E3F;text-align:left;">
+                    <div>
+                      <p style="font-size: 13px; line-height: 15px; font-weight: bold; color: #121E3F; margin: 0;">
+                        {{ item.product }}
+                      </p>
+                      <p style="font-size: 11px; line-height: 12px; padding-top: 4px; color: #5F6881; margin: 0;">
+                        {{ item.startDateAndEndDate }}
+                      </p>
+                    </div>
+                  </td>
+                  <td style="width: 130px;border-bottom: 2px solid #F3F3F3; font-size: 13px; line-height: 15px; color: #121E3F;text-align:left;">
+                    {{ item.paymentCycle }}
+                  </td>
+                  <td style="width: 100px;border-bottom: 2px solid #F3F3F3; font-size: 13px; line-height: 15px; color: #121E3F;text-align:left;">
+                    {{ item.gearLevel }}
+                  </td>
+                  <td style="width: 100px;text-align:left;border-bottom: 2px solid #F3F3F3; font-size: 13px; line-height: 15px; color: #121E3F;">
+                    $ {{ item.price }}
+                  </td>
+                </tr>
+                  <!-- {% set totalprice = totalprice + item.price %} -->
+                <!-- {% endfor %} -->
+
+
+                <tr>
+                  <td style="width:70px;"></td>
+                  <td style="width:160px;"></td>
+                  <td style="width:130px;"></td>
+                  <td style="width: 160px; text-align:right; font-size: 13px; line-height: 15px; color: #676D7D; padding-top: 16px; padding-right: 72px;">Tax:</td>
+                  <td style="width: 100px; text-align:left; font-size: 13px; line-height: 15px; color: #676D7D; padding-top: 16px;">{{tax}}%</td>
+                </tr>
+                <tr>
+                  <td style="width:70px;"></td>
+                  <td style="width:160px;"></td>
+                  <td colspan="2" style="width: 160px; text-align:right; font-size: 13px; line-height: 15px; color: #676D7D; padding-top: 16px; padding-right: 72px;">Total Excluding Tax:</td>
+                  <td style="width: 100px; text-align:left; font-size: 13px; line-height: 15px; color: #676D7D; padding-top: 16px;">$ {{totalprice}}</td>
+                </tr>
+                <tr>
+                  <td colspan="5" style="padding: 16px 0; text-align: right;">
+                    <div style="width: 300px; border-bottom: 1px solid #E7E7E7; margin-left: auto; margin-right: 0;"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width:70px;"></td>
+                  <td style="width:160px;"></td>
+                  <td colspan="2" style="width: 100px; text-align:right; font-weight: bold; font-size: 16px; line-height: 18px; color: #121E3F; padding-right: 72px;">Total:</td>
+                  <td style="width: 100px; text-align:left; font-weight: bold; font-size: 16px; line-height: 18px; color: #121E3F;">$ {{round(totalprice * (1 + tax * 0.01), 2)}}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Dashed separator -->
+          <tr>
+            <td style="padding: 0 40px;">
+              <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; margin: 0 auto;">
+                <tr>
+                  <td style="padding-top: 20px;">
+                    <img src="images/Line.png" alt="Line">
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:right; padding: 16px 40px 30px; font-size: 13px; line-height: 15px; color: #8E95A6;">
+              This is computer generated invoice no signature required.
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:left; padding: 0 40px 50px; font-size: 13px; line-height: 15px; color: #121E3F;">
+              <div style="font-size: 16px; line-height: 18px; font-weight: bold;">Paying by Bank Transfer:</div>
+              <div style="padding-top: 8px;font-size: 13px; line-height: 15px;">
+                <span style="font-weight: bold;">Bank:</span>
+                <span style="padding-left: 8px;">Agricultural Bank of China Changsha Furong sub-branch</span>
+              </div>
+              <div style="padding-top: 4px; font-size: 13px; line-height: 15px;">
+                <span style="font-weight: bold;">Account Number:</span>
+                <span style="padding-left: 8px;">18099914040001269</span>
+              </div>
+              <div style="padding-top: 4px; font-size: 13px; line-height: 15px;">
+                <span style="font-weight: bold;">Bank Holder Name: </span>
+                <span style="padding-left: 8px;">PDF TECHNOLOGIES, INC.</span>
+              </div>
+              <div style="padding-top: 4px; font-size: 13px; line-height: 15px;">
+                <span style="font-weight: bold;">SWIFT Code:</span>
+                <span style="padding-left: 8px;">ABOCCNBJ180</span>
+              </div>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 0 40px; padding-bottom: 40px;">
+              <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; background: #F9F9FB; margin: 0 auto;">
+                <tr>
+                  <td style="padding-top: 20px; text-align: center;">
+                    <div style="font-size: 12px; line-height: 21px; color: #121E3F; ">
+                      If you have any question, please contact us. Email:
+                      <a href="mailto:support@compdf.com" style="color: #3B99FC;">support@compdf.com</a>.
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 16px; text-align: center;">
+                    <a href="https://compdf.com/">
+                      <img src="images/compdfkit.png" alt="PDF Technologies" width="180">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-bottom: 20px;padding-top: 16px; text-align: center;">
+                    <div style="font-size: 12px; line-height: 21px; color: #121E3F; ">
+                      © 2014-2025 PDF Technologies, Inc. All Rights Reserved.
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+{
+    "address": "258 Hickory Hills",
+    "billNo": "4455667788",
+    "company": "Alpine Solutions",
+    "country": "Switzerland",
+    "email": "anna.mueller@alpinesolutions.ch",
+    "firstName": "Anna",
+    "gearLevel": "Pro",
+    "compdfkit": false,
+    "invoiceDate": "2025-03-20",
+    "lastName": "Mueller",
+    "paymentCycle": "Monthly",
+    "price": "1600",
+    "province": "Zurich",
+    "startDateAndEndDate": "2025-03-20 to 2025-04-20",
+    "tax": 9,
+    "zip": "8001",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Pro",
+            "startDateAndEndDate": "2025-03-20 to 2025-04-20",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Pro",
+            "price": 500
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit SDK",
+            "startDateAndEndDate": "2025-03-20 to 2025-04-20",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Pro",
+            "price": 400
+        },
+        {
+            "index": 3,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-03-20 to 2025-04-20",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Pro",
+            "price": 350
+        },
+        {
+            "index": 4,
+            "product": "ComPDFKit Support",
+            "startDateAndEndDate": "2025-03-20 to 2025-04-20",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Pro",
+            "price": 250
+        },
+        {
+            "index": 5,
+            "product": "ComPDFKit Analytics",
+            "startDateAndEndDate": "2025-03-20 to 2025-04-20",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Basic",
+            "price": 100
+        }
+    ]
+}

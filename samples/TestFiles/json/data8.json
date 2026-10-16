@@ -1,0 +1,60 @@
+{
+    "address": "426 Spruce Street",
+    "billNo": "9012345678",
+    "company": "Global Tech Solutions",
+    "country": "Brazil",
+    "email": "carlos.silva@globaltech.com.br",
+    "firstName": "Carlos",
+    "gearLevel": "Enterprise",
+    "compdfkit": true,
+    "invoiceDate": "2025-02-25",
+    "lastName": "Silva",
+    "paymentCycle": "Yearly",
+    "price": "4500",
+    "province": "São Paulo",
+    "startDateAndEndDate": "2025-02-25 to 2026-02-25",
+    "tax": 11,
+    "zip": "01310-100",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Enterprise",
+            "startDateAndEndDate": "2025-02-25 to 2026-02-25",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Enterprise",
+            "price": 1500
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit SDK",
+            "startDateAndEndDate": "2025-02-25 to 2026-02-25",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Pro",
+            "price": 1200
+        },
+        {
+            "index": 3,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-02-25 to 2026-02-25",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Pro",
+            "price": 900
+        },
+        {
+            "index": 4,
+            "product": "ComPDFKit Basic",
+            "startDateAndEndDate": "2025-02-25 to 2026-02-25",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Basic",
+            "price": 600
+        },
+        {
+            "index": 5,
+            "product": "ComPDFKit Support",
+            "startDateAndEndDate": "2025-02-25 to 2026-02-25",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Pro",
+            "price": 300
+        }
+    ]
+}

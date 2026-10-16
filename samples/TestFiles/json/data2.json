@@ -1,0 +1,36 @@
+{
+    "address": "789 Pine Street",
+    "billNo": "3456789012",
+    "company": "Innovation Hub",
+    "country": "United Kingdom",
+    "email": "bob.johnson@innovationhub.co.uk",
+    "firstName": "Bob",
+    "gearLevel": "Enterprise",
+    "compdfkit": true,
+    "invoiceDate": "2025-01-20",
+    "lastName": "Johnson",
+    "paymentCycle": "Quarterly",
+    "price": "2500",
+    "province": "London",
+    "startDateAndEndDate": "2025-01-20 to 2025-04-20",
+    "tax": 12,
+    "zip": "SW1A 1AA",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Enterprise",
+            "startDateAndEndDate": "2025-01-20 to 2025-04-20",
+            "paymentCycle": "Quarterly",
+            "gearLevel": "Enterprise",
+            "price": 1500
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit SDK",
+            "startDateAndEndDate": "2025-01-20 to 2025-04-20",
+            "paymentCycle": "Quarterly",
+            "gearLevel": "Pro",
+            "price": 1000
+        }
+    ]
+}

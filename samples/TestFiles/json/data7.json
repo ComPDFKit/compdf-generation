@@ -1,0 +1,36 @@
+{
+    "address": "753 Elm Circle",
+    "billNo": "8901234567",
+    "company": "Tech Ventures",
+    "country": "Singapore",
+    "email": "lisa.tan@techventures.sg",
+    "firstName": "Lisa",
+    "gearLevel": "Basic",
+    "compdfkit": false,
+    "invoiceDate": "2025-02-20",
+    "lastName": "Tan",
+    "paymentCycle": "Monthly",
+    "price": "120",
+    "province": "Singapore",
+    "startDateAndEndDate": "2025-02-20 to 2025-03-20",
+    "tax": 7,
+    "zip": "018989",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Basic",
+            "startDateAndEndDate": "2025-02-20 to 2025-03-20",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Basic",
+            "price": 80
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-02-20 to 2025-03-20",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Basic",
+            "price": 40
+        }
+    ]
+}

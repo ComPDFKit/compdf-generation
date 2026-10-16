@@ -1,0 +1,44 @@
+{
+    "address": "814 Sycamore Lane",
+    "billNo": "7788990011",
+    "company": "Desert Tech Solutions",
+    "country": "United Arab Emirates",
+    "email": "ahmed.hassan@deserttechsolutions.ae",
+    "firstName": "Ahmed",
+    "gearLevel": "Pro",
+    "compdfkit": true,
+    "invoiceDate": "2025-04-05",
+    "lastName": "Hassan",
+    "paymentCycle": "Quarterly",
+    "price": "2700",
+    "province": "Dubai",
+    "startDateAndEndDate": "2025-04-05 to 2025-07-05",
+    "tax": 5,
+    "zip": "00000",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Pro",
+            "startDateAndEndDate": "2025-04-05 to 2025-07-05",
+            "paymentCycle": "Quarterly",
+            "gearLevel": "Pro",
+            "price": 900
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit SDK",
+            "startDateAndEndDate": "2025-04-05 to 2025-07-05",
+            "paymentCycle": "Quarterly",
+            "gearLevel": "Pro",
+            "price": 900
+        },
+        {
+            "index": 3,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-04-05 to 2025-07-05",
+            "paymentCycle": "Quarterly",
+            "gearLevel": "Pro",
+            "price": 900
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "address": "456 Oak Avenue",
+    "billNo": "2345678901",
+    "company": "TechCorp Ltd.",
+    "country": "Canada",
+    "email": "alice.smith@techcorp.com",
+    "firstName": "Alice",
+    "gearLevel": "Pro",
+    "invoiceDate": "2025-01-15",
+    "lastName": "Smith",
+    "paymentCycle": "Yearly",
+    "price": "1200",
+    "province": "Ontario",
+    "startDateAndEndDate": "2025-01-15 to 2025-02-15",
+    "tax": 8,
+    "zip": "K1A 0A6",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Pro",
+            "startDateAndEndDate": "2025-01-15 to 2025-02-15",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Pro",
+            "price": 800
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-01-15 to 2025-02-15",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Basic",
+            "price": 400
+        }
+    ]
+}

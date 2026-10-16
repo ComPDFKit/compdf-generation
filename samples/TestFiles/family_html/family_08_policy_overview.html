@@ -1,0 +1,1911 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <!--<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />-->
+
+    <style type="text/css">
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
+
+/*<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />*/
+
+:root {
+  /* font */
+  --fn-xxs: 6pt;
+  --fn-xs: 8pt;
+  --fn-sm: 10pt;
+  --fn-md: 12pt;
+  --fn-lg: 14pt;
+  --fn-xlg: 16pt;
+  /* color */
+  --color-white: #fff;
+  --color-white-2: #f2f2f2;
+  --color-white-3: #dddddd;
+  --color-black: #333;
+  --color-blue: #377eb4;
+  --color-red: #cf5353;
+  --color-green: #65a468;
+  --color-yellow: #d0a830;
+  --color-purple: #766adc;
+  --report-color-1: #337ab7;
+  --report-color-2: #fe7a7b;
+  --report-color-3: #99d8b9;
+  --report-color-4: #fcc557;
+  --report-color-5: #6eb9cd;
+  --report-color-6: #ff9966;
+  --report-color-7: #6097c7;
+  --report-color-1-3: rgb(101, 181, 246, 0.3);
+  --report-color-2-3: rgba(254, 122, 123, 0.3);
+  --report-color-3-3: rgba(153, 216, 185, 0.3);
+  --report-color-4-3: rgba(252, 197, 87, 0.3);
+  --report-color-5-3: #6097c7;
+  --report-color-6-3: rgba(255, 153, 102, 0.3);
+  --report-color-7-3: #99d9ea;
+  /* Semantic background color variables */
+  /* Primary palette (Dark background) */
+  --color-bg-primary: var(--report-color-1);
+  --color-bg-secondary: var(--report-color-2);
+  --color-bg-tertiary: var(--report-color-3);
+  --color-bg-quaternary: var(--report-color-4);
+  --color-bg-quinary: var(--report-color-5);
+  --color-bg-senary: var(--report-color-6);
+  --color-bg-septenary: var(--report-color-7);
+  /* Light background colors (For example: 30% Opacity) */
+  --color-bg-primary-light: var(--report-color-1-3);
+  --color-bg-secondary-light: var(--report-color-2-3);
+  --color-bg-tertiary-light: var(--report-color-3-3);
+  --color-bg-quaternary-light: var(--report-color-4-3);
+  --color-bg-quinary-light: var(--report-color-5-3);
+  --color-bg-senary-light: var(--report-color-6-3);
+  --color-bg-septenary-light: var(--report-color-7-3);
+  /* Text colors on backgrounds */
+  --color-text: var(--color-black);
+  --color-text-2: var(--color-white);
+}
+/* Financial adviser report palette */
+[data-theme="FN"] {
+  /* color */
+  --report-color-1: #66cccc;
+  --report-color-2: #fe7a7b;
+  --report-color-3: #99d8b9;
+  --report-color-4: #fcc557;
+  --report-color-5: #bb97ec;
+  --report-color-6: #ff9966;
+  --report-color-7: #4d98d9;
+  --report-color-1-3: rgba(102, 204, 204, 0.3);
+  --report-color-2-3: rgba(254, 122, 123, 0.3);
+  --report-color-3-3: rgba(153, 216, 185, 0.3);
+  --report-color-4-3: rgba(252, 197, 87, 0.3);
+  --report-color-5-3: rgba(187, 151, 236, 0.3);
+  --report-color-6-3: rgba(255, 153, 102, 0.3);
+  --report-color-7-3: rgba(77, 152, 217, 0.3);
+}
+
+/* normal.css */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+.pagebreak {
+  page-break-inside: avoid;
+  page-break-before: always;
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/* base */
+@page {
+  margin: 0; /* Spacing */
+  margin-top: 35px;
+  margin-bottom: 42px;
+  /*Dimensions set by the application*/
+  /* size: A4; */
+}
+
+tr {
+  page-break-inside: avoid;
+}
+
+html,
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 300;
+  font-size: var(--fn-sm);
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--color-black);
+}
+
+.content {
+  /*  padding-top: 0.3cm;*/
+  padding-left: 1cm;
+  padding-right: 0.6cm;
+}
+/* Header */
+header {
+  height: 25px;
+  background: linear-gradient(
+    var(--report-color-7) 41%,
+    var(--color-white) 40%
+  );
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+header::before {
+  content: "";
+  display: block;
+  background-color: var(--report-color-7);
+  height: 25px;
+  width: 200px;
+  transform: skewX(-30deg);
+  margin-right: 0.6cm;
+  border-radius: 0 0 3px 3px;
+}
+/* Footer */
+footer {
+  padding-bottom: 0.3cm;
+  margin-top: 10px;
+  font-size: var(--fn-xs);
+  border-top: 1px solid var(--color-white-2);
+}
+
+footer .content {
+  padding-top: 0.2cm;
+}
+
+/* Colors */
+.bg-green {
+  background-color: var(--color-green) !important;
+  color: var(--color-black) !important;
+}
+
+.report-bg-1 {
+  background-color: var(--color-bg-primary) !important;
+  color: var(--color-text) !important;
+}
+
+.report-bg-2 {
+  background-color: var(--color-bg-secondary) !important;
+  color: var(--color-text) !important;
+}
+
+.report-bg-3 {
+  background-color: var(--color-bg-tertiary) !important;
+  color: var(--color-text) !important;
+}
+
+.report-bg-4 {
+  background-color: var(--color-bg-quaternary) !important;
+  color: var(--color-text) !important;
+}
+
+.report-bg-5 {
+  background-color: var(--color-bg-quinary) !important;
+  color: var(--color-text-2) !important;
+}
+
+[data-theme="FN"] {
+  .report-bg-5 {
+    color: var(--color-text) !important;
+  }
+}
+
+.report-bg-6 {
+  background-color: var(--color-bg-senary) !important;
+  color: var(--color-text) !important;
+}
+
+.report-bg-7 {
+  background-color: var(--color-bg-septenary) !important;
+  color: var(--color-text-2) !important;
+}
+
+/* Light background colors */
+.report-bg-1-3 {
+  background-color: var(--color-bg-primary-light) !important;
+  color: var(--color-text) !important;
+}
+
+.report-bg-2-3 {
+  background-color: var(--color-bg-secondary-light) !important;
+  color: var(--color-text) !important;
+}
+
+.report-bg-3-3 {
+  background-color: var(--color-bg-tertiary-light) !important;
+  color: var(--color-text) !important;
+}
+
+.report-bg-4-3 {
+  background-color: var(--color-bg-quaternary-light) !important;
+  color: var(--color-text) !important;
+}
+
+.report-bg-5-3 {
+  background-color: var(--color-bg-quinary-light) !important;
+  color: var(--color-text-2) !important;
+}
+
+[data-theme="FN"] {
+  .report-bg-5-3 {
+    background-color: var(--color-bg-quinary-light) !important;
+    color: var(--color-text) !important;
+  }
+}
+
+.report-bg-6-3 {
+  background-color: var(--color-bg-senary-light) !important;
+  color: var(--color-text) !important;
+}
+
+.report-bg-7-3 {
+  background-color: var(--color-bg-septenary-light) !important;
+  color: var(--color-text) !important;
+}
+
+.text-main {
+  color: var(--color-blue) !important;
+}
+
+.text-yellow {
+  color: var(--color-yellow) !important;
+}
+
+.text-red {
+  color: var(--color-red) !important;
+}
+
+.text-black {
+  color: var(--color-black) !important;
+}
+
+.text-green {
+  color: var(--color-green) !important;
+}
+
+/* flex */
+.d-flex {
+  display: flex !important;
+}
+
+.flex-column {
+  flex-flow: column !important;
+}
+
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.justify-content-around {
+  justify-content: space-around !important;
+}
+
+.justify-content-stretch {
+  justify-content: stretch !important;
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+.align-items-end {
+  align-items: flex-end !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.align-items-stretch {
+  align-items: stretch !important;
+}
+/* Spacing */
+.mb-5 {
+  margin-bottom: 5px !important;
+}
+
+.mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+
+.mr-5 {
+  margin-right: 5px !important;
+}
+
+.mr-10 {
+  margin-right: 10px !important;
+}
+
+.mr-15 {
+  margin-right: 15px !important;
+}
+
+.pl-0 {
+  padding-left: 0 !important;
+}
+
+.pr-0 {
+  padding-right: 0 !important;
+}
+
+.pr-15 {
+  padding-right: 15px !important;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+/* Dimensions */
+.w-100 {
+  width: 100% !important;
+}
+/* Common styles */
+.text-left,
+.text-start {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right,
+.text-end {
+  text-align: right !important;
+}
+
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+.fn-xxs {
+  font-size: var(--fn-xxs) !important;
+}
+
+.fn-xs {
+  font-size: var(--fn-xs) !important;
+}
+
+.fn-sm {
+  font-size: var(--fn-sm) !important;
+}
+
+.fn-md {
+  font-size: var(--fn-md) !important;
+}
+
+.fn-lg {
+  font-size: var(--fn-lg) !important;
+}
+
+.fn-xlg {
+  font-size: var(--fn-xlg) !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-wrap-auto {
+  word-break: break-all !important;
+}
+
+.text-multiline-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* Labels */
+.tag-xs {
+  padding: 2px 3px;
+  font-weight: 700;
+}
+
+.tag-sm {
+  padding: 3px 6px;
+  font-weight: 700;
+}
+
+/* Notes */
+.remark,
+.remark li {
+  list-style: square;
+}
+
+.remark li {
+  margin-bottom: 5px;
+}
+
+/* Review Notes */
+ul.list-decimal > li {
+  list-style: decimal-leading-zero;
+  text-align: left;
+  letter-spacing: 5;
+  font-size: var(--fn-md);
+  line-height: 1.5;
+}
+
+/* Tables */
+/* Table settings */
+table {
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+table.m-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.table-w100 {
+  width: 100%;
+}
+
+table.table-fixed {
+  table-layout: fixed;
+}
+
+th,
+td {
+  padding: 3px 6px;
+}
+
+/* All borders */
+table.border-type {
+  border-top: 1px solid var(--color-white-3);
+  border-left: 1px solid var(--color-white-3);
+}
+
+table.border-type th,
+table.border-type td {
+  border-bottom: 1px solid var(--color-white-3);
+  border-right: 1px solid var(--color-white-3);
+}
+
+/* Bottom borders */
+table.border-b-type tr:first-child th,
+table.border-b-type tr:first-child td {
+  border-top: 1px solid var(--color-white-3);
+}
+
+table.border-b-type th,
+table.border-b-type td {
+  border-bottom: 1px solid var(--color-white-3);
+}
+
+table.border-b-type thead th,
+table.border-b-type thead td {
+  border-bottom: none;
+}
+
+table.border-b-type.border-top-none tr:first-child th,
+table.border-b-type.border-top-none tr:first-child td {
+  border-top: none;
+}
+/* Alternating rows */
+table.table-ebra tr:nth-child (even) {
+  background-color: var(--color-white-2);
+}
+
+/* Table alignment */
+table th {
+  text-align: center;
+}
+
+table.td-center td {
+  text-align: center;
+}
+
+table.td-right td {
+  text-align: right;
+}
+
+/* Separator every five rows */
+table.table-bg-5n > tbody > tr:nth-child(5n) td {
+  background-color: var(--color-white-2);
+}
+
+/* type-a Basic table */
+table.type-a th {
+  background-color: var(--report-color-1);
+  color: var(--color-text-2);
+  font-weight: 500;
+}
+
+/* Page title */
+.page-title {
+  font-size: var(--fn-xlg);
+  font-weight: 500;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.item-name {
+  color: var(--report-color-7);
+}
+
+/*  */
+table .policy-info th,
+table .policy-info td {
+  border-top: 10px solid #fff;
+}
+
+table .policy-info:first-child th,
+table .policy-info:first-child td {
+  border-top: 0;
+}
+
+td.checked {
+  font-weight: 500;
+}
+
+td.checked::before {
+  content: "★ ";
+  color: var(--color-yellow);
+}
+
+/* Policy Assets */
+.left-box,
+.right-box {
+  width: 49%;
+}
+
+.sob-list {
+  border: 1px solid var(--color-white-3);
+  margin-bottom: 10px;
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.sob-title {
+  padding: 5px 10px;
+  font-size: var(--fn-md);
+  font-weight: 500;
+  background-color: var(--color-white-2);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sob-title > img {
+  height: 32px;
+}
+
+.sob-sub-title {
+  padding: 5px;
+  min-width: 48px;
+  flex-shrink: 0;
+  text-align: center;
+  background-color: var(--report-color-5-3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fn-xs);
+}
+
+.sob-item {
+  padding: 3px 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--color-white-3);
+}
+
+.sob-list > .sob-item:last-child {
+  border: none;
+}
+
+.sob-item-name {
+  margin-right: auto;
+}
+
+.sob-item-val {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.header-banner-sob {
+  background: url (images/banner-sob.png);
+  height: 120px;
+  background-size: cover;
+}
+
+/* Divide width equally among six columns */
+.td-6 tbody tr > td {
+  width: 16.6%;
+}
+
+.suggestion-box {
+  border: 1px solid var(--color-white-3);
+  padding: 15px;
+  border-radius: 3px;
+}
+
+.suggestion-box p {
+  line-height: 1.5;
+  margin: 0;
+}
+
+.line-clamp-5 {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+
+.cover-box {
+  position: relative;
+}
+
+.cover-img-box {
+  margin-bottom: 30px;
+}
+
+.cover-img {
+  height: 600px;
+  object-fit: contain;
+}
+
+.ct-name {
+  font-size: 24pt;
+  font-weight: 500;
+}
+
+.ct-name > span {
+  margin-right: 3rem;
+}
+
+.ct-name > span:last-child {
+  margin-right: 0;
+}
+
+.ct-content {
+  font-size: var(--fn-lg);
+  position: absolute;
+  top: 22cm;
+}
+
+.ct-content td {
+  padding: 0px 15px 15px 0;
+}
+
+/* Proposal */
+
+header.proposal {
+  background: linear-gradient(
+    var(--report-color-5) 41%,
+    var(--color-white) 40%
+  );
+}
+
+header.proposal::before {
+  background-color: var(--report-color-5);
+}
+
+/* Policy features */
+.IF .title {
+  background-color: var(--report-color-1);
+  color: var(--color-black);
+  padding: 6px 15px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.IF .B {
+  padding: 6px 15px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--color-white-3);
+}
+
+.item-name.proposal {
+  color: var(--report-color-5);
+}
+
+/* Policy benefits */
+.IB .A {
+  font-weight: 500;
+}
+
+.IB .A:before {
+  content: "【";
+}
+
+.IB .A:after {
+  content: "】";
+}
+
+.IB .B {
+  font-weight: 500;
+}
+
+/* Print client details-Mailing label */
+/* 2x7 */
+.cust-print-list-2-7 {
+  display: grid;
+  grid-template-columns: repeat(2, 105mm);
+  grid-template-rows: repeat(7, 42.4mm);
+  gap: 0px 0px;
+}
+
+/* 3x7 */
+.cust-print-list-3-7 {
+  display: grid;
+  grid-template-columns: repeat(3, 70mm);
+  grid-template-rows: repeat(7, 42.4mm);
+  gap: 0px 0px;
+}
+
+/* Fix page breaks */
+.cust-print-list-2-7 + .cust-print-list-2-7,
+.cust-print-list-3-7 + .cust-print-list-3-7 {
+  page-break-before: always;
+}
+
+.cust-print-card {
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.print-add {
+  align-self: flex-start;
+}
+
+.print-cust-name {
+  font-size: 16pt;
+}
+
+.print-sender {
+  align-self: flex-end;
+}
+
+/* Pyramid diagram */
+.asset-structure-box {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.pyramid {
+  min-width: 852px;
+}
+
+.explanation {
+  min-width: 150px;
+}
+
+.pyramid-box {
+  height: 95px;
+  width: 200px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fn-md);
+  background-color: var(--color-white-2);
+}
+
+.explanation-box {
+  height: 95px;
+  width: auto;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fn-lg);
+  font-weight: 500;
+  background-color: var(--color-white-2);
+}
+
+/* Individual review-Monthly Premiums */
+.payment-info-height {
+  min-height: 1rem;
+}
+
+/* Coverage Details */
+.table-font-lg-tight,
+.table-font-sm-tight {
+  letter-spacing: 0;
+}
+
+.table-font-lg-tight {
+  font-size: 11pt;
+}
+
+.table-font-sm-tight {
+  font-size: 9pt;
+}
+
+.table-font-sm-tight td {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+/* Fixed table height */
+.text-overflow-1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-wrapper-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc (var(--fn-sm) * 2 + 2px);
+}
+
+.text-overflow-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: calc (var(--fn-sm) + 2px);
+}
+
+/**/
+table:has(.page-head) {
+  border-top: none !important;
+}
+
+.page-head {
+  position: relative;
+  background-color: var(--color-white) !important;
+  color: var(--color-black) !important;
+  border-right: var(--color-white) !important;
+  padding-left: 0;
+  padding-right: 0;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.page-head .page-title {
+  position: relative;
+  z-index: 999;
+}
+
+.page-head:after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -2px;
+  width: 4px;
+  height: calc(100% + 1px);
+  background-color: var(--color-white); /* Line color */
+}
+
+.fake-tr {
+  height: 0 !important;
+  visibility: hidden !important;
+}
+
+.fake-tr th {
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Monthly Premiums-Calendar view */
+.premium-card-head {
+  background-color: var(--report-color-1);
+  color: var(--color-white);
+  line-height: 1.5;
+  border-radius: 4px 4px 0 0;
+  text-align: center;
+  font-weight: 900;
+}
+
+.premium-item {
+  display: grid;
+  grid-template-columns: 88px 1fr 1fr;
+  gap: 5px;
+  height: 22px;
+  align-items: center;
+}
+
+.premium-item:nth-child (even) {
+  background-color: #f2f2f2;
+}
+
+.premium-item > div {
+  text-align: left;
+  letter-spacing: 0;
+}
+
+.premium-item .insured {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 5px;
+}
+
+.premium-item .company {
+  white-space: nowrap;
+  padding-left: 5px;
+}
+
+.premium-item .policy-no {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.premium-item .premium {
+  text-align: right;
+  font-weight: 500;
+  padding-right: 5px;
+}
+
+.premium-card-footer > div {
+  text-align: right;
+  font-weight: 500;
+  line-height: 1.5;
+  background-color: var(--report-color-7-3);
+  padding: 0 5px;
+}
+
+.premium-box-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.premium-item-th {
+  background-color: var(--report-color-5-3);
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+</style>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Noto Sans TC';
+            src: local("Noto Sans TC"), url('NotoSansTC-VariableFont_wght.ttf')
+        }
+    </style>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Noto Sans TC';
+            font-weight: 100;
+            src: local("Noto Sans TC Thin"), url('NotoSansTC-Thin.ttf');
+        }
+
+        @font-face {
+            font-family: 'Noto Sans TC';
+            font-weight: 200;
+            src: local("Noto Sans TC ExtraLight"), url('NotoSansTC-ExtraLight.ttf');
+        }
+
+        @font-face {
+            font-family: 'Noto Sans TC';
+            font-weight: 300;
+            src: local("Noto Sans TC Light"), url('NotoSansTC-Light.ttf');
+        }
+
+        @font-face {
+            font-family: 'Noto Sans TC';
+            font-weight: 400;
+            src: local("Noto Sans TC Regular"), url('NotoSansTC-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'Noto Sans TC';
+            font-weight: 500;
+            src: local("Noto Sans TC Medium"), url('NotoSansTC-Medium.ttf');
+        }
+
+        @font-face {
+            font-family: 'Noto Sans TC';
+            font-weight: 600;
+            src: local("Noto Sans TC SemiBold"), url('NotoSansTC-SemiBold.ttf');
+        }
+
+        @font-face {
+            font-family: 'Noto Sans TC';
+            font-weight: 700;
+            src: local("Noto Sans TC Bold"), url('NotoSansTC-Bold.ttf');
+        }
+
+        @font-face {
+            font-family: 'Noto Sans TC';
+            font-weight: 800;
+            src: local("Noto Sans TC ExtraBold"), url('NotoSansTC-ExtraBold.ttf');
+        }
+
+        @font-face {
+            font-family: 'Noto Sans TC';
+            font-weight: 900;
+            src: local("Noto Sans TC Black"), url('NotoSansTC-Black.ttf');
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Family-Policy Overview -->
+<div class="content">
+    <table class='type-a border-b-type table-w100 td-center border-top-none'>
+<thead>
+    <tr>
+        <th class='page-head' colspan='7'>
+            <div class="d-flex justify-content-between align-items-center mb-15">
+                <div class="page-title">
+                    <div class="mr-15">Lin O Bin</div><div class="item-name">Policy Overview</div>
+                </div>
+            </div>
+        </th>
+    </tr>
+</thead>
+<tbody>
+<tr class="policy-info">
+    <td colspan="10" class="text-left pl-0 pr-0">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 tag-sm report-bg-7 mb-5">
+                <span class="fw-500 mr-5">Kuo Hua Life</span>28006803
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="mr-5 report-bg-5 tag-xs">C6</div>
+                <div class="fw-500 mr-15">Term OOOO Policy</div>
+            </div>
+            <div><span class="mr-5">Policyholder</span><span class="fw-500">Lin O Bin</span></div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th class="text-center">Issue Date</th>
+    <th class="text-center">Issue<br />Age</th>
+    <th class="text-right">Annual Premium</th>
+    <th class="text-right">Death</th>
+    <th class="text-right">Accidental Death<br />Total Disability</th>
+    <th class="text-right">Cancer Death</th>
+    <th class="text-right">Critical Illness Benefit</th>
+</tr>
+<tr>
+    <td class="text-center">1984/2/23</td>
+    <td class="text-center">22</td>
+    <td class="text-right">0</td>
+    <td class="text-right">500,000</td>
+    <td class="text-right">500,000</td>
+    <td class="text-right">500,000</td>
+    <td class="text-right"></td>
+</tr>
+<tr>
+    <td colspan="7" class="text-left fn-xs">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 fw-500">Death Beneficiary</div>
+            <div class="mr-5 report-bg-5-3 tag-xs"></div>
+        </div>
+    </td>
+</tr>
+<tr class="policy-info">
+    <td colspan="10" class="text-left pl-0 pr-0">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 tag-sm report-bg-7 mb-5">
+                <span class="fw-500 mr-5">Kuo Hua Life</span>60023283
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="mr-5 report-bg-5 tag-xs">D7F</div>
+                <div class="fw-500 mr-15">Whole Life Cancer Insurance-Family</div>
+            </div>
+            <div><span class="mr-5">Policyholder</span><span class="fw-500">Lin O Bin</span></div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th class="text-center">Issue Date</th>
+    <th class="text-center">Issue<br />Age</th>
+    <th class="text-right">Annual Premium</th>
+    <th class="text-right">Death</th>
+    <th class="text-right">Accidental Death<br />Total Disability</th>
+    <th class="text-right">Cancer Death</th>
+    <th class="text-right">Critical Illness Benefit</th>
+</tr>
+<tr>
+    <td class="text-center">1989/2/24</td>
+    <td class="text-center">27</td>
+    <td class="text-right">0</td>
+    <td class="text-right"></td>
+    <td class="text-right"></td>
+    <td class="text-right">600,000</td>
+    <td class="text-right"></td>
+</tr>
+<tr>
+    <td colspan="7" class="text-left fn-xs">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 fw-500">Death Beneficiary</div>
+            <div class="mr-5 report-bg-5-3 tag-xs"></div>
+        </div>
+    </td>
+</tr>
+<tr class="policy-info">
+    <td colspan="10" class="text-left pl-0 pr-0">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 tag-sm report-bg-7 mb-5">
+                <span class="fw-500 mr-5">Kuo Hua Life</span>28015792
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="mr-5 report-bg-5 tag-xs">C6</div>
+                <div class="fw-500 mr-15">Term OOOO Policy</div>
+            </div>
+            <div><span class="mr-5">Policyholder</span><span class="fw-500">Lin O Bin</span></div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th class="text-center">Issue Date</th>
+    <th class="text-center">Issue<br />Age</th>
+    <th class="text-right">Annual Premium</th>
+    <th class="text-right">Death</th>
+    <th class="text-right">Accidental Death<br />Total Disability</th>
+    <th class="text-right">Cancer Death</th>
+    <th class="text-right">Critical Illness Benefit</th>
+</tr>
+<tr>
+    <td class="text-center">1985/10/3</td>
+    <td class="text-center">24</td>
+    <td class="text-right">11,199</td>
+    <td class="text-right">600,000</td>
+    <td class="text-right">3,100,000</td>
+    <td class="text-right">600,000</td>
+    <td class="text-right"></td>
+</tr>
+<tr>
+    <td colspan="7" class="text-left fn-xs">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 fw-500">Death Beneficiary</div>
+            <div class="mr-5 report-bg-5-3 tag-xs"></div>
+        </div>
+    </td>
+</tr>
+<tr class="policy-info">
+    <td colspan="10" class="text-left pl-0 pr-0">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 tag-sm report-bg-7 mb-5">
+                <span class="fw-500 mr-5">Farglory Life</span>100842929-0
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="mr-5 report-bg-5 tag-xs">FH1</div>
+                <div class="fw-500 mr-15">Whole Life Insurance</div>
+            </div>
+            <div><span class="mr-5">Policyholder</span><span class="fw-500">Lin O Bin</span></div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th class="text-center">Issue Date</th>
+    <th class="text-center">Issue<br />Age</th>
+    <th class="text-right">Annual Premium</th>
+    <th class="text-right">Death</th>
+    <th class="text-right">Accidental Death<br />Total Disability</th>
+    <th class="text-right">Cancer Death</th>
+    <th class="text-right">Critical Illness Benefit</th>
+</tr>
+<tr>
+    <td class="text-center">2006/10/10</td>
+    <td class="text-center">45</td>
+    <td class="text-right">0</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right"></td>
+</tr>
+<tr>
+    <td colspan="7" class="text-left fn-xs">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 fw-500">Death Beneficiary</div>
+            <div class="mr-5 report-bg-5-3 tag-xs"></div>
+        </div>
+    </td>
+</tr>
+<tr class="policy-info">
+    <td colspan="10" class="text-left pl-0 pr-0">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 tag-sm report-bg-7 mb-5">
+                <span class="fw-500 mr-5">Fubon Life</span>1010349631-00
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="mr-5 report-bg-5 tag-xs">XWO</div>
+                <div class="fw-500 mr-15">Fu OOOOO Policy</div>
+            </div>
+            <div><span class="mr-5">Policyholder</span><span class="fw-500">Lin O Bin</span></div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th class="text-center">Issue Date</th>
+    <th class="text-center">Issue<br />Age</th>
+    <th class="text-right">Annual Premium</th>
+    <th class="text-right">Death</th>
+    <th class="text-right">Accidental Death<br />Total Disability</th>
+    <th class="text-right">Cancer Death</th>
+    <th class="text-right">Critical Illness Benefit</th>
+</tr>
+<tr>
+    <td class="text-center">2015/3/1</td>
+    <td class="text-center">54</td>
+    <td class="text-right">0</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right"></td>
+</tr>
+<tr>
+    <td colspan="7" class="text-left fn-xs">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 fw-500">Death Beneficiary</div>
+            <div class="mr-5 report-bg-5-3 tag-xs"></div>
+        </div>
+    </td>
+</tr>
+<tr class="policy-info">
+    <td colspan="10" class="text-left pl-0 pr-0">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 tag-sm report-bg-7 mb-5">
+                <span class="fw-500 mr-5">Chubb Insurance</span>HAFTW0001619011
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="mr-5 report-bg-5 tag-xs">ACE008</div>
+                <div class="fw-500 mr-15">Comprehensive Protection Plan*</div>
+            </div>
+            <div><span class="mr-5">Policyholder</span><span class="fw-500">Lin O Bin</span></div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th class="text-center">Issue Date</th>
+    <th class="text-center">Issue<br />Age</th>
+    <th class="text-right">Annual Premium</th>
+    <th class="text-right">Death</th>
+    <th class="text-right">Accidental Death<br />Total Disability</th>
+    <th class="text-right">Cancer Death</th>
+    <th class="text-right">Critical Illness Benefit</th>
+</tr>
+<tr>
+    <td class="text-center">2016/4/14</td>
+    <td class="text-center">55</td>
+    <td class="text-right">5,659</td>
+    <td class="text-right"></td>
+    <td class="text-right"></td>
+    <td class="text-right"></td>
+    <td class="text-right"></td>
+</tr>
+<tr>
+    <td colspan="7" class="text-left fn-xs">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 fw-500">Death Beneficiary</div>
+            <div class="mr-5 report-bg-5-3 tag-xs"></div>
+        </div>
+    </td>
+</tr>
+</tbody> </table>
+<ul class="remark">
+    <li>If a renewable one-year term rider is attached, its benefit amount is shown for each year, up to the maximum renewal age.</li>
+    <li>All amounts in this report reflect current-year coverage.</li>
+    <li>Premiums and benefits in this report are stated in TWD.</li>
+</ul>
+<div class='pagebreak'> </div>
+<table class='type-a border-b-type table-w100 td-center border-top-none'>
+<thead>
+    <tr>
+        <th class='page-head' colspan='7'>
+            <div class="d-flex justify-content-between align-items-center mb-15">
+                <div class="page-title">
+                    <div class="mr-15">Lin O Wen</div><div class="item-name">Policy Overview</div>
+                </div>
+            </div>
+        </th>
+    </tr>
+</thead>
+<tbody>
+<tr class="policy-info">
+    <td colspan="10" class="text-left pl-0 pr-0">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 tag-sm report-bg-7 mb-5">
+                <span class="fw-500 mr-5">Farglory Life</span>100842959-2
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="mr-5 report-bg-5 tag-xs"></div>
+                <div class="fw-500 mr-15"></div>
+            </div>
+            <div><span class="mr-5">Policyholder</span><span class="fw-500">Lin O Bin</span></div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th class="text-center">Issue Date</th>
+    <th class="text-center">Issue<br />Age</th>
+    <th class="text-right">Annual Premium</th>
+    <th class="text-right">Death</th>
+    <th class="text-right">Accidental Death<br />Total Disability</th>
+    <th class="text-right">Cancer Death</th>
+    <th class="text-right">Critical Illness Benefit</th>
+</tr>
+<tr>
+    <td class="text-center">2006/10/10</td>
+    <td class="text-center">13</td>
+    <td class="text-right">0</td>
+    <td class="text-right"></td>
+    <td class="text-right"></td>
+    <td class="text-right"></td>
+    <td class="text-right"></td>
+</tr>
+<tr>
+    <td colspan="7" class="text-left fn-xs">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 fw-500">Death Beneficiary</div>
+            <div class="mr-5 report-bg-5-3 tag-xs"></div>
+        </div>
+    </td>
+</tr>
+</tbody> </table>
+<ul class="remark">
+    <li>If a renewable one-year term rider is attached, its benefit amount is shown for each year, up to the maximum renewal age.</li>
+    <li>All amounts in this report reflect current-year coverage.</li>
+    <li>Premiums and benefits in this report are stated in TWD.</li>
+</ul>
+<div class='pagebreak'> </div>
+<table class='type-a border-b-type table-w100 td-center border-top-none'>
+<thead>
+    <tr>
+        <th class='page-head' colspan='7'>
+            <div class="d-flex justify-content-between align-items-center mb-15">
+                <div class="page-title">
+                    <div class="mr-15">Lin O Sheng</div><div class="item-name">Policy Overview</div>
+                </div>
+            </div>
+        </th>
+    </tr>
+</thead>
+<tbody>
+<tr class="policy-info">
+    <td colspan="10" class="text-left pl-0 pr-0">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 tag-sm report-bg-7 mb-5">
+                <span class="fw-500 mr-5">Farglory Life</span>100842939-8
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="mr-5 report-bg-5 tag-xs">FH1</div>
+                <div class="fw-500 mr-15">Whole Life Insurance</div>
+            </div>
+            <div><span class="mr-5">Policyholder</span><span class="fw-500">Lin O Bin</span></div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th class="text-center">Issue Date</th>
+    <th class="text-center">Issue<br />Age</th>
+    <th class="text-right">Annual Premium</th>
+    <th class="text-right">Death</th>
+    <th class="text-right">Accidental Death<br />Total Disability</th>
+    <th class="text-right">Cancer Death</th>
+    <th class="text-right">Critical Illness Benefit</th>
+</tr>
+<tr>
+    <td class="text-center">2006/10/10</td>
+    <td class="text-center">16</td>
+    <td class="text-right">0</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right"></td>
+</tr>
+<tr>
+    <td colspan="7" class="text-left fn-xs">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 fw-500">Death Beneficiary</div>
+            <div class="mr-5 report-bg-5-3 tag-xs"></div>
+        </div>
+    </td>
+</tr>
+</tbody> </table>
+<ul class="remark">
+    <li>If a renewable one-year term rider is attached, its benefit amount is shown for each year, up to the maximum renewal age.</li>
+    <li>All amounts in this report reflect current-year coverage.</li>
+    <li>Premiums and benefits in this report are stated in TWD.</li>
+</ul>
+<div class='pagebreak'> </div>
+<table class='type-a border-b-type table-w100 td-center border-top-none'>
+<thead>
+    <tr>
+        <th class='page-head' colspan='7'>
+            <div class="d-flex justify-content-between align-items-center mb-15">
+                <div class="page-title">
+                    <div class="mr-15">Chen O Chi</div><div class="item-name">Policy Overview</div>
+                </div>
+            </div>
+        </th>
+    </tr>
+</thead>
+<tbody>
+<tr class="policy-info">
+    <td colspan="10" class="text-left pl-0 pr-0">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 tag-sm report-bg-7 mb-5">
+                <span class="fw-500 mr-5">Farglory Life</span>100842963-0
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="mr-5 report-bg-5 tag-xs">FH1</div>
+                <div class="fw-500 mr-15">Whole Life Insurance</div>
+            </div>
+            <div><span class="mr-5">Policyholder</span><span class="fw-500">Chen O Chi</span></div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th class="text-center">Issue Date</th>
+    <th class="text-center">Issue<br />Age</th>
+    <th class="text-right">Annual Premium</th>
+    <th class="text-right">Death</th>
+    <th class="text-right">Accidental Death<br />Total Disability</th>
+    <th class="text-right">Cancer Death</th>
+    <th class="text-right">Critical Illness Benefit</th>
+</tr>
+<tr>
+    <td class="text-center">2006/10/10</td>
+    <td class="text-center">46</td>
+    <td class="text-right">0</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right"></td>
+</tr>
+<tr>
+    <td colspan="7" class="text-left fn-xs">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 fw-500">Death Beneficiary</div>
+            <div class="mr-5 report-bg-5-3 tag-xs"></div>
+        </div>
+    </td>
+</tr>
+<tr class="policy-info">
+    <td colspan="10" class="text-left pl-0 pr-0">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 tag-sm report-bg-7 mb-5">
+                <span class="fw-500 mr-5">Fubon Life</span>1010349537-00
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="mr-5 report-bg-5 tag-xs">XWO</div>
+                <div class="fw-500 mr-15">Fu OOOOO Policy</div>
+            </div>
+            <div><span class="mr-5">Policyholder</span><span class="fw-500">Chen O Chi</span></div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th class="text-center">Issue Date</th>
+    <th class="text-center">Issue<br />Age</th>
+    <th class="text-right">Annual Premium</th>
+    <th class="text-right">Death</th>
+    <th class="text-right">Accidental Death<br />Total Disability</th>
+    <th class="text-right">Cancer Death</th>
+    <th class="text-right">Critical Illness Benefit</th>
+</tr>
+<tr>
+    <td class="text-center">2015/3/1</td>
+    <td class="text-center">54</td>
+    <td class="text-right">0</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right">100,000</td>
+    <td class="text-right"></td>
+</tr>
+<tr>
+    <td colspan="7" class="text-left fn-xs">
+        <div class="d-flex justify-content-start align-items-center">
+            <div class="mr-5 fw-500">Death Beneficiary</div>
+            <div class="mr-5 report-bg-5-3 tag-xs"></div>
+        </div>
+    </td>
+</tr>
+</tbody> </table>
+<ul class="remark">
+    <li>If a renewable one-year term rider is attached, its benefit amount is shown for each year, up to the maximum renewal age.</li>
+    <li>All amounts in this report reflect current-year coverage.</li>
+    <li>Premiums and benefits in this report are stated in TWD.</li>
+</ul>
+
+</div>
+
+</body></html>

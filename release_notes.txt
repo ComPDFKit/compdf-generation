@@ -1,0 +1,52 @@
+*** Release Date: Dec 26, 2025 ***
+
+Version 1.0.0 Beta
+- New Features
+PDF Generation Server-Side Feature Release:
+New HTML to PDF Generation Feature
+1. Supports defining HTML templates, compatible with commonly used HTML tags and CSS styles.
+2. Supports dynamically generating PDFs using HTML templates and JSON data.
+3. Supports dynamic insertion of text, images, and table data.
+4. Supports setting filling rules, such as conditional statements, loop statements, arithmetic operations, and common functions.
+5. Supports custom PDF page settings and fonts.
+
+This is the inaugural release of ComPDF Generation for Java. This SDK is designed to help developers quickly integrate powerful PDF generation technology into applications for .NET Core and Java. Even developers with limited PDF knowledge can rapidly implement a PDF generator with just a few lines of code.
+
+The key highlights of this release include:
+
+HTML to PDF: Supports converting HTML strings, files, or streams into PDF documents.
+
+Template Rendering: Supports dynamically rendering HTML templates using JSON data and converting them into PDF documents.
+
+Customizable Configuration: Allows setting parameters like page size, base URI, fonts, etc.
+
+Font Management: Supports using custom fonts and can integrate system fonts.
+
+For additional information, please consult the developer_guides_java.pdf document located in the same folder as this file.
+
+*** Release Date: Oct 14, 2026 ***
+
+Version 1.3.0
+- New Features
+1. Added CEmailConverter APIs for converting EML and Outlook MSG messages to HTML or PDF from file paths, File objects, byte arrays, and input streams.
+2. Added offline HTML package export, access to body resources and attachment data, and queries for selected body provenance.
+3. Added email format detection, configurable byte budgets, cooperative cancellation, conversion status codes, and detailed diagnostics.
+4. Added page margin configuration APIs for setting and reading the top, right, bottom, and left margins in CSS pixels.
+5. Added HTML header and footer options, including templates, resource base URI, title, URL, date, page counters, and controls for skipping cover pages and numbering pages.
+
+- Fixes and Improvements
+1. Improved native library extraction and loading by using a dedicated Java temporary directory.
+2. Updated Linux native dependencies for PNG and JPEG image decoding.
+3. Added resource lifetime checks, callback reentry protection, and Java stream/cancellation exception reporting for email conversion.
+
+- Samples and Documentation
+1. Added EmailConvertTest examples for EML/MSG parsing, export of HTML packages, PDF generation with headers and footers, and stream conversion.
+2. Added PrintOptionsTest and FamilyHeaderFooterTest examples for page margins, header/footer templates, cover pages, and page numbering.
+3. Expanded public API comments and regenerated the Java API Reference, including the email conversion interfaces.
+
+- Compatibility and Usage
+1. This release package targets Linux x86_64 and Java 8 or higher. Use the matching JAR and native library.
+2. PDF generation requires a valid initialized license. Email parsing and HTML export require the native library to be loaded but do not require a license.
+3. Email PDF output contains the message body and an optional attachment list. Attachment files are exported separately with the HTML package; they are not embedded in the PDF or rendered as additional pages.
+
+For API details and examples, open API Reference/index.html or consult develop_guide_java_en.pdf and develop_guide_java_zh.pdf in this package.

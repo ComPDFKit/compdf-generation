@@ -1,0 +1,68 @@
+{
+    "address": "691 Cypress Drive",
+    "billNo": "8899001122",
+    "company": "Arctic Innovation",
+    "country": "Finland",
+    "email": "elina.virtanen@arcticinnovation.fi",
+    "firstName": "Elina",
+    "gearLevel": "Enterprise",
+    "compdfkit": false,
+    "invoiceDate": "2025-04-10",
+    "lastName": "Virtanen",
+    "paymentCycle": "Monthly",
+    "price": "4200",
+    "province": "Helsinki",
+    "startDateAndEndDate": "2025-04-10 to 2025-05-10",
+    "tax": 18,
+    "zip": "00100",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Enterprise",
+            "startDateAndEndDate": "2025-04-10 to 2025-05-10",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Enterprise",
+            "price": 1800
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit Pro",
+            "startDateAndEndDate": "2025-04-10 to 2025-05-10",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Pro",
+            "price": 900
+        },
+        {
+            "index": 3,
+            "product": "ComPDFKit SDK",
+            "startDateAndEndDate": "2025-04-10 to 2025-05-10",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Pro",
+            "price": 700
+        },
+        {
+            "index": 4,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-04-10 to 2025-05-10",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Basic",
+            "price": 500
+        },
+        {
+            "index": 5,
+            "product": "ComPDFKit Analytics",
+            "startDateAndEndDate": "2025-04-10 to 2025-05-10",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Pro",
+            "price": 200
+        },
+        {
+            "index": 6,
+            "product": "ComPDFKit Training",
+            "startDateAndEndDate": "2025-04-10 to 2025-05-10",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Enterprise",
+            "price": 100
+        }
+    ]
+}

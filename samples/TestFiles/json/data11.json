@@ -1,0 +1,60 @@
+{
+    "address": "963 Walnut Plaza",
+    "billNo": "2233445566",
+    "company": "Mediterranean Digital",
+    "country": "Spain",
+    "email": "maria.garcia@mediterraneandigital.es",
+    "firstName": "Maria",
+    "gearLevel": "Enterprise",
+    "compdfkit": false,
+    "invoiceDate": "2025-03-10",
+    "lastName": "Garcia",
+    "paymentCycle": "Monthly",
+    "price": "3500",
+    "province": "Madrid",
+    "startDateAndEndDate": "2025-03-10 to 2025-04-10",
+    "tax": 14,
+    "zip": "28001",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Enterprise",
+            "startDateAndEndDate": "2025-03-10 to 2025-04-10",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Enterprise",
+            "price": 1500
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit Pro",
+            "startDateAndEndDate": "2025-03-10 to 2025-04-10",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Pro",
+            "price": 800
+        },
+        {
+            "index": 3,
+            "product": "ComPDFKit SDK",
+            "startDateAndEndDate": "2025-03-10 to 2025-04-10",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Pro",
+            "price": 600
+        },
+        {
+            "index": 4,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-03-10 to 2025-04-10",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Basic",
+            "price": 400
+        },
+        {
+            "index": 5,
+            "product": "ComPDFKit Training",
+            "startDateAndEndDate": "2025-03-10 to 2025-04-10",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Pro",
+            "price": 200
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "address": "456 Lotus Street",
+    "billNo": "0011223344",
+    "company": "Southern Cross Digital",
+    "country": "South Africa",
+    "email": "themba.mthembu@southerncrossdigital.co.za",
+    "firstName": "Themba",
+    "gearLevel": "Basic",
+    "compdfkit": false,
+    "invoiceDate": "2025-04-20",
+    "lastName": "Mthembu",
+    "paymentCycle": "Monthly",
+    "price": "180",
+    "province": "Gauteng",
+    "startDateAndEndDate": "2025-04-20 to 2025-05-20",
+    "tax": 10,
+    "zip": "2000",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Basic",
+            "startDateAndEndDate": "2025-04-20 to 2025-05-20",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Basic",
+            "price": 90
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-04-20 to 2025-05-20",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Basic",
+            "price": 60
+        },
+        {
+            "index": 3,
+            "product": "ComPDFKit Support",
+            "startDateAndEndDate": "2025-04-20 to 2025-05-20",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Basic",
+            "price": 30
+        }
+    ]
+}

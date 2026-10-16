@@ -1,0 +1,36 @@
+{
+    "address": "987 Birch Boulevard",
+    "billNo": "6789012345",
+    "company": "Creative Studios",
+    "country": "France",
+    "email": "sarah.dubois@creativestudios.fr",
+    "firstName": "Sarah",
+    "gearLevel": "Enterprise",
+    "compdfkit": false,
+    "invoiceDate": "2025-02-10",
+    "lastName": "Dubois",
+    "paymentCycle": "Monthly",
+    "price": "3000",
+    "province": "Île-de-France",
+    "startDateAndEndDate": "2025-02-10 to 2025-03-10",
+    "tax": 15,
+    "zip": "75001",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Enterprise",
+            "startDateAndEndDate": "2025-02-10 to 2025-03-10",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Enterprise",
+            "price": 2000
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit SDK",
+            "startDateAndEndDate": "2025-02-10 to 2025-03-10",
+            "paymentCycle": "Monthly",
+            "gearLevel": "Pro",
+            "price": 1000
+        }
+    ]
+}

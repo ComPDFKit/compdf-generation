@@ -1,0 +1,44 @@
+{
+    "address": "123 Bamboo Avenue",
+    "billNo": "9900112233",
+    "company": "Dragon Tech",
+    "country": "China",
+    "email": "li.wei@dragontech.cn",
+    "firstName": "Li",
+    "gearLevel": "Pro",
+    "compdfkit": true,
+    "invoiceDate": "2025-04-15",
+    "lastName": "Wei",
+    "paymentCycle": "Yearly",
+    "price": "2400",
+    "province": "Beijing",
+    "startDateAndEndDate": "2025-04-15 to 2026-04-15",
+    "tax": 7,
+    "zip": "100000",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Pro",
+            "startDateAndEndDate": "2025-04-15 to 2026-04-15",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Pro",
+            "price": 1200
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit SDK",
+            "startDateAndEndDate": "2025-04-15 to 2026-04-15",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Pro",
+            "price": 800
+        },
+        {
+            "index": 3,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-04-15 to 2026-04-15",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Basic",
+            "price": 400
+        }
+    ]
+}

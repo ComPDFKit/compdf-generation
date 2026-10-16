@@ -1,0 +1,44 @@
+{
+    "address": "741 Chestnut Road",
+    "billNo": "1122334455",
+    "company": "Nordic Software",
+    "country": "Sweden",
+    "email": "erik.andersson@nordicsoftware.se",
+    "firstName": "Erik",
+    "gearLevel": "Pro",
+    "compdfkit": true,
+    "invoiceDate": "2025-03-05",
+    "lastName": "Andersson",
+    "paymentCycle": "Quarterly",
+    "price": "2100",
+    "province": "Stockholm",
+    "startDateAndEndDate": "2025-03-05 to 2025-06-05",
+    "tax": 13,
+    "zip": "111 29",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Pro",
+            "startDateAndEndDate": "2025-03-05 to 2025-06-05",
+            "paymentCycle": "Quarterly",
+            "gearLevel": "Pro",
+            "price": 700
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit SDK",
+            "startDateAndEndDate": "2025-03-05 to 2025-06-05",
+            "paymentCycle": "Quarterly",
+            "gearLevel": "Pro",
+            "price": 700
+        },
+        {
+            "index": 3,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-03-05 to 2025-06-05",
+            "paymentCycle": "Quarterly",
+            "gearLevel": "Pro",
+            "price": 700
+        }
+    ]
+}

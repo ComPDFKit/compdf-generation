@@ -1,0 +1,36 @@
+{
+    "address": "147 Ash Grove",
+    "billNo": "3344556677",
+    "company": "Pacific Tech",
+    "country": "New Zealand",
+    "email": "james.wilson@pacifictech.co.nz",
+    "firstName": "James",
+    "gearLevel": "Basic",
+    "compdfkit": true,
+    "invoiceDate": "2025-03-15",
+    "lastName": "Wilson",
+    "paymentCycle": "Yearly",
+    "price": "900",
+    "province": "Auckland",
+    "startDateAndEndDate": "2025-03-15 to 2026-03-15",
+    "tax": 8,
+    "zip": "1010",
+    "items": [
+        {
+            "index": 1,
+            "product": "ComPDFKit Basic",
+            "startDateAndEndDate": "2025-03-15 to 2026-03-15",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Basic",
+            "price": 450
+        },
+        {
+            "index": 2,
+            "product": "ComPDFKit API",
+            "startDateAndEndDate": "2025-03-15 to 2026-03-15",
+            "paymentCycle": "Yearly",
+            "gearLevel": "Basic",
+            "price": 450
+        }
+    ]
+}
